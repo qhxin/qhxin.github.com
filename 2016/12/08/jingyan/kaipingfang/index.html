@@ -6,17 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qhxin.com">
-  <title>Archives | 青花</title>
+  <title>简单计算任意数的平方根 | 青花</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="因果业缘，真实不虚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="青花">
-<meta property="og:url" content="http://qhxin.com/archives/index.html">
+  <meta name="description" content="最近学到一个单间计算任意数的平方根的方法；
+计算√(X)，则√(X) = √(A)*√(X/A) = √(A)*√(1+(X-A)/A)。再用泰勒级数里面，当x接近0时，√(1+x)≈1+x/2。可以得到一个近似值：
+√(X) ≈ √(A)*(1+(X-A)/(2*A)) = √(A)+(X-A)/(2*√(A))
+例子：比如计算一个数38的平方根，先找到离他最近的那个小一些的能开方的数，即36。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单计算任意数的平方根">
+<meta property="og:url" content="http://qhxin.com/2016/12/08/jingyan/kaipingfang/index.html">
 <meta property="og:site_name" content="青花">
-<meta property="og:description" content="因果业缘，真实不虚">
+<meta property="og:description" content="最近学到一个单间计算任意数的平方根的方法；
+计算√(X)，则√(X) = √(A)*√(X/A) = √(A)*√(1+(X-A)/A)。再用泰勒级数里面，当x接近0时，√(1+x)≈1+x/2。可以得到一个近似值：
+√(X) ≈ √(A)*(1+(X-A)/(2*A)) = √(A)+(X-A)/(2*√(A))
+例子：比如计算一个数38的平方根，先找到离他最近的那个小一些的能开方的数，即36。">
+<meta property="og:updated_time" content="2016-12-08T15:12:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="青花">
-<meta name="twitter:description" content="因果业缘，真实不虚">
+<meta name="twitter:title" content="简单计算任意数的平方根">
+<meta name="twitter:description" content="最近学到一个单间计算任意数的平方根的方法；
+计算√(X)，则√(X) = √(A)*√(X/A) = √(A)*√(1+(X-A)/A)。再用泰勒级数里面，当x接近0时，√(1+x)≈1+x/2。可以得到一个近似值：
+√(X) ≈ √(A)*(1+(X-A)/(2*A)) = √(A)+(X-A)/(2*√(A))
+例子：比如计算一个数38的平方根，先找到离他最近的那个小一些的能开方的数，即36。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -126,145 +136,138 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-jingyan/kaipingfang" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
         
   
+    <h1 class="article-title" itemprop="name">
+      简单计算任意数的平方根
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/08/jingyan/kaipingfang/" class="archive-article-date">
+
+        <a href="/2016/12/08/jingyan/kaipingfang/" class="archive-article-date">
   	<time datetime="2016-12-08T14:46:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/08/jingyan/kaipingfang/">简单计算任意数的平方根</a>
-    </h1>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近学到一个单间计算任意数的平方根的方法；</p>
+<p>计算√(X)，则√(X) = √(A)*√(X/A) = √(A)*√(1+(X-A)/A)。再用泰勒级数里面，当x接近0时，√(1+x)≈1+x/2。可以得到一个近似值：</p>
+<p>√(X) ≈ √(A)*(1+(X-A)/(2*A)) = √(A)+(X-A)/(2*√(A))</p>
+<p>例子：比如计算一个数38的平方根，先找到离他最近的那个小一些的能开方的数，即36。然后按照这个方法得到近似值：</p>
+<p>√38 = √36*√(1+2/36) ≈ 6*(1+2/36/2) = 6+2/6/2 = 6.17</p>
+<p>真实的√38 = 6.164，这个结果算是比较接近了。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/经验/">经验</a></li></ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        <div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode"></div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/04/jingyan/yaoshifangzhi/" class="archive-article-date">
-  	<time datetime="2016-12-04T14:21:58.620Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/04/jingyan/yaoshifangzhi/">不要把钥匙别裤腰上</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/经验/">经验</a></li></ul>
-	</div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/04/jingyan/yaoshifangzhi/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">不要把钥匙别裤腰上</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/02/suibi/bingzhong/" class="archive-article-date">
-  	<time datetime="2016-12-02T10:41:42.200Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/02/suibi/bingzhong/">病中偷闲，重新把博客搞起来</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/01/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-01T11:01:27.650Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/01/hello-world/">Hello World</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="jingyan/kaipingfang" data-title="简单计算任意数的平方根" data-url="http://qhxin.com/2016/12/08/jingyan/kaipingfang/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"qhxin"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
 
 
       </div>
@@ -286,8 +289,8 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
