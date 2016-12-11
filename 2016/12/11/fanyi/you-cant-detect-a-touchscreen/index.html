@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://qhxin.com">
+  <title>你无法检测到触摸屏 | 青花</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="更新: 我不知何故忽略了提及Modernizr.touch，它实际上使用了下面提到的 “Touch APIs”。 Modernizr声称不再检测触摸设备——可以看看这个讨论。
+
+无论你可能会怎么想，目前，在浏览器里可靠地检测当前的设备是否有一个触摸屏是不可能的。
+并且可能会在很久很久以后你才能做这个检测。
+让我解释一下这样说的原因……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你无法检测到触摸屏">
+<meta property="og:url" content="http://qhxin.com/2016/12/11/fanyi/you-cant-detect-a-touchscreen/index.html">
+<meta property="og:site_name" content="青花">
+<meta property="og:description" content="更新: 我不知何故忽略了提及Modernizr.touch，它实际上使用了下面提到的 “Touch APIs”。 Modernizr声称不再检测触摸设备——可以看看这个讨论。
+
+无论你可能会怎么想，目前，在浏览器里可靠地检测当前的设备是否有一个触摸屏是不可能的。
+并且可能会在很久很久以后你才能做这个检测。
+让我解释一下这样说的原因……">
+<meta property="og:updated_time" content="2016-12-11T02:33:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你无法检测到触摸屏">
+<meta name="twitter:description" content="更新: 我不知何故忽略了提及Modernizr.touch，它实际上使用了下面提到的 “Touch APIs”。 Modernizr声称不再检测触摸设备——可以看看这个讨论。
+
+无论你可能会怎么想，目前，在浏览器里可靠地检测当前的设备是否有一个触摸屏是不可能的。
+并且可能会在很久很久以后你才能做这个检测。
+让我解释一下这样说的原因……">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">青花</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">因果业缘，真实不虚</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="mail" target="_blank" href="mailto:qhxin@qhxin.com" title="mail"><i class="icon-mail"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-sort"></i></div>
+  		<h1 class="header-author js-mobile-header hide">青花</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/images/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">青花</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">因果业缘，真实不虚</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="mail" target="_blank" href="mailto:qhxin@qhxin.com" title="mail"><i class="icon-mail"></i></a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-fanyi/you-cant-detect-a-touchscreen" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      你无法检测到触摸屏
+    </h1>
+  
+
+        <a href="/2016/12/11/fanyi/you-cant-detect-a-touchscreen/" class="archive-article-date">
+  	<time datetime="2016-12-11T02:32:03.540Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-11</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><ins><strong>更新:</strong> 我不知何故忽略了提及<code>Modernizr.touch</code>，它实际上使用了下面提到的 “Touch APIs”。 Modernizr声称不再检测触摸设备——可以看看<a href="https://github.com/Modernizr/Modernizr/issues/548" target="_blank" rel="external">这个讨论</a>。</ins></p>
+<hr>
+<p>无论你可能会怎么想，目前，在浏览器里可靠地检测当前的设备是否有一个触摸屏是不可能的。</p>
+<p>并且可能会在很久很久以后你才能做这个检测。</p>
+<p>让我解释一下这样说的原因……</p>
+<a id="more"></a>
+<h2 id="在沙盒中-¶"><a href="#在沙盒中-¶" class="headerlink" title="在沙盒中 ¶"></a>在沙盒中 <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#boxed-in" title="链接到这里" target="_blank" rel="external">¶</a></h2><p>浏览器的环境是一个沙盒。为了限制恶意网站可能造成的伤害，你的应用的代码只能获得浏览器想给你的东西。</p>
+<p>这意味着，你可以得到的系统的唯一信息是浏览器以HTML，CSS和JavaScript API的形式向你公开的那些。确定一个系统是否支持某个功能，我们能做两件事，一是看某个明确的API是否存在，或者第二，看它是否真的做了正确的事情。</p>
+<p>从历史上看，有两个浏览器的功能已被用于“触摸屏检测”：<strong>媒体查询</strong> 和 <strong>Touch APIs</strong>。但这些离做到万无一失还很遥远。</p>
+<p>跟我一起看下去。</p>
+<h2 id="设备宽度媒体查询-¶"><a href="#设备宽度媒体查询-¶" class="headerlink" title="设备宽度媒体查询 ¶"></a>设备宽度媒体查询 <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#device-width-media-queries" title="链接到这里" target="_blank" rel="external">¶</a></h2><p>手机拥有小屏幕，并且手机拥有触摸屏，所以小屏幕等于触摸屏，这正确吗？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var hasTouch = window.matchMedia(&apos;(max-device-width: 320px)&apos;).matches;</div></pre></td></tr></table></figure>
+<p>所以，这是非常错误的看法。<a href="http://www.wired.co.uk/news/archive/2013-01/10/panasonic-4k-tablet" target="_blank" rel="external">大平板电脑</a>和触屏笔记本电脑/台式机已经明显的证明了这是错的。再加上还有成千上万的旧的手机型号有小的非触摸屏。但不幸的是，现在到处都有应用这条咒语的网站：“如果这是一个小屏幕，它就是触摸屏；如果这是一个大屏幕，它就是由鼠标操作的”，把垃圾的体验留给平板和多端用户。</p>
+<h2 id="Touch-APIs-¶"><a href="#Touch-APIs-¶" class="headerlink" title="Touch APIs ¶"></a>Touch APIs <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#touch-apis" title="链接到这里" target="_blank" rel="external">¶</a></h2><p><ins>顺便说一句，这是 <code>Modernizr.touch</code> 使用的方法。</ins></p>
+<p>如果浏览器支持一些事件诸如<code>touchstart</code>（或者其他在 <a href="http://www.w3.org/TR/touch-events/" target="_blank" rel="external">Touch Events</a> 事件接口标准的事件），这一定就是一个触屏设备，对吗？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var hasTouch = &apos;ontouchstart&apos; in window;</div></pre></td></tr></table></figure>
+<p>好吧，或许是这样。但问题是，从来没有人说过一个非触屏设备不能实现触摸接口，或者至少在 DOM 里拥有事件句柄。</p>
+<p>Chrome 24.0 装载支持了所有这些接口，所以它们可以开始支持触摸屏而不需要分为“触屏”和“非触屏”来构建。但是大量开发者依然在使用上面例子中的检测方法，所以这损坏了大量网站。Chrome 团队用一次升级<a href="https://code.google.com/p/chromium/issues/detail?id=152149" target="_blank" rel="external">“修复”了这个问题</a>，它只在当启动时检测到了可触摸输入设备时才启用触摸接口。</p>
+<p>所以我们都没问题了，对吧？</p>
+<p>不完全是。</p>
+<h3 id="接口的接口-¶"><a href="#接口的接口-¶" class="headerlink" title="接口的接口 ¶"></a>接口的接口 <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#an-api-for-an-api" title="链接到这里" target="_blank" rel="external">¶</a></h3><p>对于设备本身，浏览器仍然有相当远的距离。它只能通过操作系统来使用设备，而操作系统有自己的一堆接口让浏览器知道设备连接上了。</p>
+<p>虽然这些接口在大多数情况下是相当可靠的，但在我们<a href="https://github.com/Modernizr/Modernizr/issues/880" target="_blank" rel="external">最近遇到的情况</a>下，他们在 Windows 8 的 Chrome 里给出了错误的结果……他们报告了一个触摸屏的存在（其实是“数字转换器”），其实并没有连接触摸屏。</p>
+<p>Firefox 也做了一些类似的转换，并且同样在这种情况下和 Chrome 一样表现为了失败，所以看起来它也可能使用了和 Chrome 一样的规则——虽然我不能肯定的断言。</p>
+<p>毫无疑问，设置和服务会混淆接口返回的结果。到目前为止我只在 Windows 8 里看到这种情况，但从理论上讲，它可以发生在任何操作系统。</p>
+<p>一些 BlackBerry OS 的版本也已被知道在非触摸设备上持久启用了触摸的接口。</p>
+<p>所以看起来浏览器也不能百分之一百的确定检测触屏设备。如果浏览器都不知道，那我们的应用又怎么知道呢？</p>
+<h3 id="没有结果-¶"><a href="#没有结果-¶" class="headerlink" title="没有结果 ¶"></a>没有结果 <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#drawing-a-blank" title="链接到这里" target="_blank" rel="external">¶</a></h3><p>假设有一个这些触摸接口存在就意味着这个设备有一个触摸屏……那是否意味着如果没有触摸接口存在，那触摸屏也一定不存在？</p>
+<p>当然不是。最初的 iPhone （在2007年发布）是第一个支持 Touch Events 的设备，但是，从二十世纪70年代开始触摸屏已经以一种或另一种形式存在。甚至就算最近，诺基亚的塞班浏览器也不支持触摸事件，直到去年 8.2 版本的发布。</p>
+<p>IE 10 在触摸设备上提供（可以说是优越的）<a href="http://www.w3.org/TR/pointerevents/" target="_blank" rel="external">Pointer Events API</a>，用来代替 Touch Events 标准，所以会在测试<code>ontouchstart</code>时返回<code>false</code>。<del>为了覆盖所有基线你也可以做这些检查例如<code>&#39;onmspointerdown&#39; in window</code>——虽然这会很容易的像 Chrome 和 Firefox 一样受到系统接口可靠性的影响。</del><ins datetime="2013-05-14">我说的不对，<code>onmspointerdown</code>还和鼠标和其他指针有关。然而 IE 10 提供了<code>navigator.maxTouchPoints</code>可以用来代替利用。感谢 <a href="https://twitter.com/jacobrossi" target="_blank" rel="external">@jacobrossi</a>指正我。</ins></p>
+<p>不管是 Safari 还是 Opera 都还没有在他们的桌面浏览器实现触摸接口，所以他们在触摸设备上也没有结果。</p>
+<p>没有专门的触摸接口，浏览器仅仅模拟鼠标事件……因而有许多设备和触摸屏不等同，你根本不能用这些检测方法来检测这些设备。</p>
+<h3 id="这是动态的-Jim-¶"><a href="#这是动态的-Jim-¶" class="headerlink" title="这是动态的, Jim ¶"></a>这是动态的, Jim <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#its-dynamic-jim" title="链接到这里" target="_blank" rel="external">¶</a></h3><p>一个触摸屏可以作为一个外围设备连接到另一个非触摸式笔记本电脑，或者一个 KVM 开关可以从非触摸屏切换到触摸屏。这可以在浏览器会话过程中的任何时间发生。</p>
+<p>当应用在执行时，浏览器不应该添加和移除接口——这会造成混乱——所以随着已连接设备的变化，这种特性检测可能出现失败。</p>
+<h2 id="戳它-¶"><a href="#戳它-¶" class="headerlink" title="戳它 ¶"></a>戳它 <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#poke-it" title="链接到这里" target="_blank" rel="external">¶</a></h2><p>我之前说，另一种方法来测试特性是看接口是否真正的完成了他们支持的功能……</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var hasTouch;</div><div class="line">window.addEventListener(&apos;touchstart&apos;, function setHasTouch () &#123;</div><div class="line">    hasTouch = true;</div><div class="line">    // 当事件触发后，将事件监听移除，否则它会干掉滚动性能</div><div class="line">    window.removeEventListener(&apos;touchstart&apos;, setHasTouch);</div><div class="line">&#125;, false);</div></pre></td></tr></table></figure>
+<p>这是比简单地看是否这个事件句柄在 DOM 上存在更加可靠的方法：除非这个浏览器大量的违反了标准，如果一个触摸捕获设备与浏览器交互，这个事件会被触发。</p>
+<p>然而，这产生了三个严重需要注意的事项：</p>
+<ol>
+<li>在你知道结果之前，它需要有交互发生；</li>
+<li>如果没有触摸交互发生，你不知道这是因为没有触摸屏——（还是）仅仅是用户没有使用它；</li>
+<li>这个事件在不支持 Touch Events API 的浏览器里依然不会触发……而这是大部分情况。</li>
+</ol>
+<p>这或许对于一些使用场景已经足够好了，但是对于任何涉及修改布局的应用来说，当你戳它的时候，UI 会发生改变，这是一个相当可怕的使用体验。</p>
+<h2 id="指针媒体查询-¶"><a href="#指针媒体查询-¶" class="headerlink" title="指针媒体查询 ¶"></a>指针媒体查询 <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#pointer-media-queries" title="链接到这里" target="_blank" rel="external">¶</a></h2><p>它们被添加到 <a href="http://dev.w3.org/csswg/mediaqueries4/" target="_blank" rel="external">Media Queries Level 4 标准</a>。他们只是在<a href="https://bugs.webkit.org/show_bug.cgi?id=87403" target="_blank" rel="external"> WebKit 内被部分地实现</a>，还没有出现在任何稳定的浏览器里。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var hasTouch = window.matchMedia(&apos;(pointer: coarse)&apos;).matches;</div></pre></td></tr></table></figure>
+<p>关于这个规范的细节在之前<a href="http://www.stucox.com/blog/the-good-and-bad-of-level-4-media-queries/" target="_blank" rel="external">我有一个鲁莽的结论</a>，但它实际上有可能被用作一个可靠的特征检测。不需要思考：它没有检测一个“触摸屏”例如……而是任何普遍的指针设备。</p>
+<p>作为媒体查询，它自然是动态的：结果可以在任何时候即时反映连接的设备。</p>
+<p>然而，它依然依赖于操作系统接口提供可信的数据。</p>
+<p>目前还不清楚何时（或是否）其他浏览器将实现此功能……这个标准在 W3C 都还非常不稳定。在它广泛采纳之前，不支持这些媒体查询的浏览器们会一直像现在这样“不可检测”。</p>
+<h2 id="你这样做是错误的-¶"><a href="#你这样做是错误的-¶" class="headerlink" title="你这样做是错误的 ¶"></a>你这样做是错误的 <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#youre-doing-it-wrong" title="链接到这里" target="_blank" rel="external">¶</a></h2><p>我认为，如果你在最开始的时候就在试着“监测触摸屏”，你很可能已经在做危险的假设。我将详细列出你想要监测屏幕的几个可能原因，并指出其中的错误。</p>
+<h3 id="手指友好的布局-¶"><a href="#手指友好的布局-¶" class="headerlink" title="手指友好的布局 ¶"></a>手指友好的布局 <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#finger-friendly-layouts" title="链接到这里" target="_blank" rel="external">¶</a></h3><p>胖手指比鼠标更不准确，所以听起来我们适应触摸屏布局是有道理的：较大的控件，控件之间更多的空隙，等等。</p>
+<p>但触摸屏是唯一的具有较差的指点精度的输入设备吗？</p>
+<p>那智能电视的<a href="http://www.gesture-remote.com/" target="_blank" rel="external">手势遥控器</a>、<a href="http://en.wikipedia.org/wiki/Wii_remote" target="_blank" rel="external">Wii游戏机的遥控手柄</a>，或者类似 <a href="https://www.leapmotion.com/" target="_blank" rel="external">Leap Motion</a> 的手指跟踪技术又怎么样呢？</p>
+<p>如果你特希望触屏检测在这些设备上不会过时，千万别假定在监测屏幕时只需做好空间布局就够了。</p>
+<h3 id="事件和交互-¶"><a href="#事件和交互-¶" class="headerlink" title="事件和交互 ¶"></a>事件和交互 <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#events-interactions" title="链接到这里" target="_blank" rel="external">¶</a></h3><p>所以你想要为你的幻灯效果和地图窗口部件设置滑动手势吗？这很酷。但是不要认为这意味着你不需要支持鼠标和键盘交互。</p>
+<p>有视力障碍的用户经常在他们的智能手机上连接键盘和点击设备，这样许多设备都同时支持鼠标和触摸……你不能假设他们不想使用他们的鼠标、触控板以及键盘。</p>
+<p>我强烈建议一起实施两种交互方法，在这种情况下，你不需要专门检测触摸屏。</p>
+<p><a href="https://hacks.mozilla.org/2013/04/detecting-touch-its-the-why-not-the-how/" target="_blank" rel="external">Patrick Lauke 的这篇文章</a>更加详细地提出了为什么（以及怎么做）你应该一起实现鼠标和触摸事件。这篇文章很值得一读（如果你原谅他最初声称你可以可靠地检测到触摸屏……）。</p>
+<h3 id="悬停状态的处理-¶"><a href="#悬停状态的处理-¶" class="headerlink" title="悬停状态的处理 ¶"></a>悬停状态的处理 <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#handling-hover-states" title="链接到这里" target="_blank" rel="external">¶</a></h3><p>当前的触摸屏并不能传输鼠标/光标悬浮状态, 所以，最好调整我们对于触摸屏的UI设计，以便在触摸屏上能够继续使用。</p>
+<p>当然，键盘也是不能悬停的。最好一开始就避免依赖于悬停状态——仅使用它们作为点缀。</p>
+<h2 id="所以我应该做什么？-¶"><a href="#所以我应该做什么？-¶" class="headerlink" title="所以我应该做什么？ ¶"></a>所以我应该做什么？ <a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/?utm_source=Frontend-Weekly&amp;utm_campaign=03e2af53c8-EMAIL_CAMPAIGN_2016_11_09&amp;utm_medium=email&amp;utm_term=0_754e22de12-03e2af53c8-379971901#so-what-should-i-do" title="链接到这里" target="_blank" rel="external">¶</a></h2><p><ins datetime="2013-05-14"><strong>修改:</strong> 这个总结分散了这篇文章的原始信息，就是“小心，你可能没有得到你认为你得到的结果”。如果你意识到这些检测方法的风险和他们所暗含的臆断，不管怎么样，这当然是由你决定是否使用他们。然而，如果你不确定，或你的论点是“支持每一个设备”，下面的建议可能是有用的。</ins></p>
+<p>关于布局，<strong><a href="http://globalmoxie.com/blog/desktop-touch-design.shtml" target="_blank" rel="external">假设每个人都有触摸屏</a></strong>。鼠标用户们使用大的控件比触摸屏用户们使用小控件更加容易。悬停状态也是一样的。</p>
+<p>关于事件和交互，<strong>假设任何人可能有触摸屏</strong>。同等的实现键盘，鼠标和触摸交互，确保没有阻止彼此。</p>
+<p>或者，就像我在我的<a href="http://www.stucox.com/blog/the-good-and-bad-of-level-4-media-queries/" target="_blank" rel="external">关于媒体查询的文章</a>里建议的一样，你可以<strong>只询问浏览器</strong>。</p>
+<blockquote>
+<p>本文转载自：<a href="http://www.zcfy.cc" target="_blank" rel="external">众成翻译</a><br>译者：<a href="http://www.zcfy.cc/@qhxin" target="_blank" rel="external">qhxin</a><br>链接：<a href="http://www.zcfy.cc/article/1973" target="_blank" rel="external">http://www.zcfy.cc/article/1973</a><br>原文：<a href="http://www.stucox.com/blog/you-cant-detect-a-touchscreen/" target="_blank" rel="external">http://www.stucox.com/blog/you-cant-detect-a-touchscreen/</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
+	</div>
+
+      
+
+      
+
+      
+        <div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode"></div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/11/fanyi/publishing-with-github-pages-now-as-easy-as-1-2-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">发布 GitHub Pages，现在就像数 1, 2, 3 那样简单 · GitHub</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="fanyi/you-cant-detect-a-touchscreen" data-title="你无法检测到触摸屏" data-url="http://qhxin.com/2016/12/11/fanyi/you-cant-detect-a-touchscreen/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"qhxin"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 青花
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/经验/" style="font-size: 20px;">经验</a> <a href="/tags/翻译/" style="font-size: 20px;">翻译</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com">Github</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://haiwx.github.io">E-Loli</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br/&gt;在这样年轻的时候&lt;br/&gt;经常忘记一些人和事&lt;br/&gt;现在写一些东西&lt;br/&gt;也算是一份记忆</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
