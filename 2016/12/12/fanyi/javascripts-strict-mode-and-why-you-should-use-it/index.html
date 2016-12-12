@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://qhxin.com">
+  <title>JavaScript的严格模式，以及为什么你应该使用它 | 青花</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="从 ECMAScript 5 开始，开发者能够将他们的代码转换成一个更受约束的执行形式——strict mode。严格模式通过强制更好的编程实践和消除一些语言的不安全和不明智的特点，提高了JavaScript代码质量。通过向您的代码添加以下指令，可以启用严格模式：
+1&amp;quot;use strict&amp;quot;;
+“use strict”;指令可以用两种方式使用。唤起严格模式的第一种方法是在文件级">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript的严格模式，以及为什么你应该使用它">
+<meta property="og:url" content="http://qhxin.com/2016/12/12/fanyi/javascripts-strict-mode-and-why-you-should-use-it/index.html">
+<meta property="og:site_name" content="青花">
+<meta property="og:description" content="从 ECMAScript 5 开始，开发者能够将他们的代码转换成一个更受约束的执行形式——strict mode。严格模式通过强制更好的编程实践和消除一些语言的不安全和不明智的特点，提高了JavaScript代码质量。通过向您的代码添加以下指令，可以启用严格模式：
+1&amp;quot;use strict&amp;quot;;
+“use strict”;指令可以用两种方式使用。唤起严格模式的第一种方法是在文件级">
+<meta property="og:updated_time" content="2016-12-12T07:56:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript的严格模式，以及为什么你应该使用它">
+<meta name="twitter:description" content="从 ECMAScript 5 开始，开发者能够将他们的代码转换成一个更受约束的执行形式——strict mode。严格模式通过强制更好的编程实践和消除一些语言的不安全和不明智的特点，提高了JavaScript代码质量。通过向您的代码添加以下指令，可以启用严格模式：
+1&amp;quot;use strict&amp;quot;;
+“use strict”;指令可以用两种方式使用。唤起严格模式的第一种方法是在文件级">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">青花</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">因果业缘，真实不虚</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="mail" target="_blank" href="mailto:qhxin@qhxin.com" title="mail"><i class="icon-mail"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-sort"></i></div>
+  		<h1 class="header-author js-mobile-header hide">青花</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/images/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">青花</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">因果业缘，真实不虚</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="mail" target="_blank" href="mailto:qhxin@qhxin.com" title="mail"><i class="icon-mail"></i></a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-fanyi/javascripts-strict-mode-and-why-you-should-use-it" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript的严格模式，以及为什么你应该使用它
+    </h1>
+  
+
+        <a href="/2016/12/12/fanyi/javascripts-strict-mode-and-why-you-should-use-it/" class="archive-article-date">
+  	<time datetime="2016-12-12T07:41:35.660Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-12</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从 <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf" target="_blank" rel="external">ECMAScript 5</a> 开始，开发者能够将他们的代码转换成一个更受约束的执行形式——<strong>strict mode</strong>。严格模式通过强制更好的编程实践和消除一些语言的不安全和不明智的特点，提高了JavaScript代码质量。通过向您的代码添加以下指令，可以启用严格模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;use strict&quot;;</div></pre></td></tr></table></figure>
+<p><code>“use strict”;</code>指令可以用两种方式使用。唤起严格模式的第一种方法是在文件级别上。通过在文件开始的位置添加这个指令（该指令只能在注释和空格之前），在全局上下文内启用严格模式。这意味着你所有的代码都将在严格模式下进行解析。当严格模式和非严格模式的脚本在一起使用时，一定要注意一下。当严格模式的脚本在前面的话会强制非严格模式的脚本在严格模式下解析。当非严格模式的脚本在前面时则会导致相反的行为。这会导致一些和 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=579119" target="_blank" rel="external">Amazon</a> 一样的问题。</p>
+<p>第二种方法是在函数级别上使用严格模式。将<code>“use strict”;</code>指令放置在函数体开头，可以启用这个级别的严格模式。与全局严格模式一样，这个指令只能在空格和注释之前。在函数级使用严格模式允许程序员在同一文件中混合和匹配严格模式的和非严格模式的函数。当一些遗留代码依赖于已经过时的被严格模式弃用的特点时这是很有用的。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">  &quot;use strict&quot;;</div><div class="line">  // 此函数是在严格模式下执行的</div><div class="line">&#125;</div><div class="line"></div><div class="line">function bar() &#123;</div><div class="line">  // 此函数是在非严格模式下执行的</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>关于严格模式的一个好的东西是它的向后兼容性。老版本的JavaScript会视<code>“use strict”;</code>指令为一个无意义的字符串并忽略它。而新版本的JavaScript会对这个声明进行特殊处理并切换到严格模式。对于支持严格模式的浏览器，会有以下约束。</p>
+<h1 id="隐式全局变量声明"><a href="#隐式全局变量声明" class="headerlink" title="隐式全局变量声明"></a>隐式全局变量声明</h1><p>JavaScript 有一个有趣的处理变量声明的方法。没有使用 var 关键字声明的变量会被隐式声明为全局变量。下面的代码使用了三个变量——“x”，“y”和“z”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">  var x;</div><div class="line">  var z;</div><div class="line"></div><div class="line">  x = 1;</div><div class="line">  y = 2;</div><div class="line">  z = x + y;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意，只有变量“x”和“z”声明使用 var 关键字。有一个足够的可能性是，程序员也打算声明“y”，但错误地没有。该代码将正确执行，但具有副作用，它会创建一个名字叫做“y”、值为2的全局变量。因为 window 是全局对象，这相当于写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.y = 2;</div></pre></td></tr></table></figure>
+<p>这种行为可能是有问题的，如果“y”已经定义在其他地方，且有一个不同的值。这导致代码伸缩性不太好，并且很难调试。启用严格模式将捕获这个问题。会发生一个异常，而不是使“y”成为一个全局变量。在 Chrome 中显示的异常看起来像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ReferenceError: y is not defined</div></pre></td></tr></table></figure>
+<h1 id="With-语句"><a href="#With-语句" class="headerlink" title="With 语句"></a>With 语句</h1><p>With 语句提供了一种用于工作对象属性的速记符号。在 with 语句内部，很难说一个变量是属于 with 使用的对象还是其他范围的对象。下面的代码使用一个 with 语句来输出文档的标题。这里有一个本地变量也叫 “title”，它在 with 语句里面是被忽略的。在一块更复杂的代码里，程序员在使用 with 语句时会很容易犯与变量作用域相关的错误。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">  var title = &quot;Not the page title&quot;;</div><div class="line">  with (document) &#123;</div><div class="line">    write(title + &quot;&lt;br /&gt;&quot;);</div><div class="line">    write(&quot;contains a with statement&quot;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在严格模式下，with 语句被完全的禁用了。任何试图使用 with 语句的尝试都将导致下列语法错误。注：一个更好的主意是将对象赋值给一个变量，并通过变量来访问它的属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SyntaxError: Strict mode code may not include a with statement</div></pre></td></tr></table></figure>
+<h1 id="标识符的命名"><a href="#标识符的命名" class="headerlink" title="标识符的命名"></a>标识符的命名</h1><p>严格模式在变量、函数和参数上有几个命名限制。字符串“eval”和“arguments”不能用作标识符，他们也不能有赋值。因为JavaScript内置了一个“eval”函数和“arguments”的对象，这消除了可能的混乱。尝试使用“eval”或“arguments”作为名称的结果就是下面的异常：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SyntaxError: Variable name may not be eval or arguments in strict mode</div></pre></td></tr></table></figure>
+<p>此外，标识符不能使用任何以下为未来保留的关键字：</p>
+<ul>
+<li><p>implements</p>
+</li>
+<li><p>interface</p>
+</li>
+<li><p>let</p>
+</li>
+<li><p>package</p>
+</li>
+<li><p>private</p>
+</li>
+<li><p>protected</p>
+</li>
+<li><p>public</p>
+</li>
+<li><p>static</p>
+</li>
+<li><p>yield</p>
+</li>
+</ul>
+<h1 id="this-的用法"><a href="#this-的用法" class="headerlink" title="this 的用法"></a>this 的用法</h1><p>使用“this”变量在面向对象编程中很常见。在一个函数中，“this”变量指向拥有函数的对象。然而，当一个函数不属于任何特定的对象时，“this”变量指向全局对象（window）。严格模式通过赋值给“this”一个未定义的值，移除全局对象的意外或恶意访问。如果一个函数是由一个对象拥有的，那么“this”仍然如预期的一样指向该对象。在下面的例子里，函数“foo”返回undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">  &quot;use strict&quot;;</div><div class="line">  return this;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h1><p>JavaScript 允许开发者在对象上创建只读的属性。试图在非严格模式代码中写入一个新值到只读属性会静默地失败。换言之，该属性的值保持不变，但该程序不提供任何警告或错误。在严格的模式下，这样的行为会导致脚本抛出一个异常。下面的示例创建一个名为“prop1”只读属性。在严格模式下，后续对“prop1”的赋值导致一个 TypeError 异常。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">  &quot;use strict&quot;;</div><div class="line">  var obj = Object.defineProperties(&#123;&#125;, &#123;</div><div class="line">              prop1 : &#123;</div><div class="line">                value : 1,</div><div class="line">                writable : false</div><div class="line">              &#125;</div><div class="line">            &#125;);</div><div class="line"></div><div class="line">  obj.prop1 = 2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="不可扩展的对象和变量"><a href="#不可扩展的对象和变量" class="headerlink" title="不可扩展的对象和变量"></a>不可扩展的对象和变量</h1><p>在 JavaScript 中，添加新的属性到对象是微不足道的——只是赋一个值给它就行了。JavaScript 还提供了一种防止新的属性添加的机制。通过将一个对象的内部“extensible”属性设置为 false，对一个对象的新属性的添加将静默失败。再次，严格模式会将静默的失败改为 TypeError 异常。下面的代码试图将一个新属性添加到一个非可扩展的对象中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">  &quot;use strict&quot;;</div><div class="line">  var obj = &#123;prop1 : 1&#125;;</div><div class="line"></div><div class="line">  Object.preventExtensions(obj);</div><div class="line">  obj.prop2 = 2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>对象“obj”由一个属性“prop1”构造，当“Object.preventExtensions”被调用时，“obj”变为不可扩展。尝试给对象添加“prop2”属性的结果是导致下面的异常：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TypeError: Can&apos;t add property prop2, object is not extensible</div></pre></td></tr></table></figure>
+<h1 id="重复参数和属性"><a href="#重复参数和属性" class="headerlink" title="重复参数和属性"></a>重复参数和属性</h1><p>非严格模式的 JavaScript 允许对象包含多个具有相同名称的属性。当相同的名称被使用多次时，只有最后一个声明被使用了。严格模式要求所有的属性名称都是唯一的。在下面的例子中，对象“obj”包含两个名为“prop1”的属性。在非严格模式下，“prop1”的值会是3。然而，当严格模式开启时，这会出现一个语法错误。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 在严格模式下</div><div class="line">obj = &#123;</div><div class="line">  prop1 : 1,</div><div class="line">  prop2 : 2,</div><div class="line">  prop1 : 3</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>类似的，非严格模式下的函数可以有多个参数具有相同的名称。在严格模式下，这是不被允许的。在下面的例子中，重复的“param1”导致一个语法错误。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function foo(param1, param1) &#123;</div><div class="line">  &quot;use strict&quot;;</div><div class="line">  alert(param1);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <strong>eval 变量</strong></p>
+<p>非严格模式的代码可以使用“eval”函数来添加新的变量到当前作用域。在浏览器的原生JSON支持之前，“eval”普遍的（和安全的）用于从字符串构造对象。构造的对象会成为当前作用域的一部分。在严格模式下，“eval”不能引入新的变量。当执行在严格模式下时，下面的代码不会将“bar”变量引入当前作用域。注意：如果一个含有“eval”的函数是在严格模式下执行，那么在“eval”函数里的代码也在严格模式下执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 在严格模式下</div><div class="line">eval(&quot;var bar = 10;&quot;);</div></pre></td></tr></table></figure>
+<h1 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h1><p>删除运算符用于从对象中删除属性。然而，一些属性是不能被删除的。不可配置的属性就是属于不能被删除的。非严格模式的代码将在尝试删除不可配置的属性时静默失败。这种尝试会在严格模式下执行时抛出 TypeError 异常。在下面的例子中，对象“obj”有一个叫做“prop1”的不可配置的属性和一个叫做“prop2”的可配置的属性。因为“prop2”是可配置的，所以删除它是完全可以接受的。直到试图删除“prop1”之前是没有异常被抛出的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">  &quot;use strict&quot;;</div><div class="line">  var obj = Object.defineProperties(&#123;&#125;, &#123;</div><div class="line">              prop1 : &#123;</div><div class="line">                value : 1,</div><div class="line">                configurable : false</div><div class="line">              &#125;,</div><div class="line">              prop2 : &#123;</div><div class="line">                value : 2,</div><div class="line">                configurable : true</div><div class="line">              &#125;</div><div class="line">            &#125;);</div><div class="line"></div><div class="line">  delete obj.prop2;</div><div class="line">  delete obj.prop1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>删除运算符是刻意只对对象的属性起作用的。当试图去删除普通变量和函数时会出现语法错误。下面例子中所有的删除操作都会失败。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function foo(param1) &#123;</div><div class="line">  &quot;use strict&quot;;</div><div class="line">  var bar = 1;</div><div class="line">  function baz() &#123;&#125;;</div><div class="line"></div><div class="line">  delete param1;</div><div class="line">  delete bar;</div><div class="line">  delete baz;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="使用-arguments，caller，和-callee"><a href="#使用-arguments，caller，和-callee" class="headerlink" title="使用 arguments，caller，和 callee"></a>使用 arguments，caller，和 callee</h1><p>当一个函数被调用，一个名为“arguments”的特殊对象会在函数的作用域被创建。“arguments”是一个包含了传给函数的所有参数的类数组对象。在下面的例子里“arguments[0]”和“arg1”持有同样的值，“arguments[1]”和“arg2”亦然。在非严格模式下，更新一个值会自动更新它所映射到的值。在“bar”结束时，“arg1”和“arg2”的值已经交换，即使值只赋值给了“arguments”数组。在严格模式下，别名值不会自动更新。因此，严格模式下运行，在“bar”结束时，“arg1”和“arg2”的值不会改变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">  bar(1, 2);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function bar(arg1, arg2) &#123;</div><div class="line">  var temp = arguments[0];</div><div class="line">  arguments[0] = arg2;</div><div class="line">  arguments[1] = temp;</div><div class="line">  alert(arg1 + &quot; &quot; + arg2);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>“arguments”对象还包含一个指向当前正在执行的函数的指针。当前函数称为被调用方，可被“arguments.callee”引用。这个语法只能在匿名函数内部使用，因为匿名函数没有名字。在任何其他情况下，用名字来引用被调用函数更有意义。在严格模式下，访问“arguments.callee”是不被允许的。</p>
+<p>有一个类似的方法可以用来确定函数调用是从哪里来的。在旧的浏览器里有一个“arguments.caller”对象是可用的，但是它已经被弃用了。然而，调用方法仍然可以使用“arguments.callee.caller”来被确定。严格模式也禁止访问这个调用方对象。在下面的例子中，“bar”没有在严格模式中。然而，试图访问“arguments.callee.caller”依然会失败，因为“foo”是一个在严格模式下的函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">  &quot;use strict&quot;;</div><div class="line">  bar(1, 2);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function bar(arg1, arg2) &#123;</div><div class="line">  var caller = arguments.callee.caller</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="更新-11-21-14"><a href="#更新-11-21-14" class="headerlink" title="更新 (11/21/14)"></a>更新 (11/21/14)</h3><p>启用严格模式可以允许一些 JavaScript 引擎诸如 v8，去优化代码，否则不会。在非严格模式下，在同一个函数里引用“arguments”和一个已命名参数会导致 v8 不去优化这个函数。稍微更详细的阅读，可以看<a href="https://github.com/joyent/node/pull/8302#issuecomment-54331801" target="_blank" rel="external">这个问题</a>以及我个人的 <a href="https://github.com/cjihrig/will-it-optimize" target="_blank" rel="external">will-it-optimize</a> 项目。</p>
+<h3 id="更新-11-21-14-1"><a href="#更新-11-21-14-1" class="headerlink" title="更新 (11/21/14)"></a>更新 (11/21/14)</h3><p>我也要感谢 <a href="https://twitter.com/isntitvacant/status/535891896367722496" target="_blank" rel="external">Chris Dickinson</a> 提供了一个很好的（我觉得是）严格模式阻止的坏的编码实践的案例。下面的例子在非严格模式下返回 102，但是在严格模式下，当一个函数试图重写另一个函数的参数时，会抛出一个错误。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// &quot;use strict&quot;; // 取消注释这行会看到一个错误</div><div class="line"></div><div class="line">function modify() &#123;</div><div class="line">  poison.arguments[0] = 100;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function poison(a, b) &#123;</div><div class="line">  modify();</div><div class="line">  return a + b;</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(poison(1, 2));</div></pre></td></tr></table></figure>
+<h1 id="八进制"><a href="#八进制" class="headerlink" title="八进制"></a>八进制</h1><p>八进制变量用八进制来表示数字。他们很少被使用，并且有一个非常容易使人混淆的语法。正的八进制数由“0”作前缀，负的八进制数由“-0”作前缀。举个例子，定义一个八进制的 100 看起来就像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var foo = 0100;</div></pre></td></tr></table></figure>
+<p>由于人们往往忽略前导零，这可以很容易地与十进制 100 混淆。然而，一个简短的调用“parseInt()”表明这个八进制值实际上等于转换为十进制时的64。为了解决这个问题，严格模式不允许使用八进制。在严格模式下，八进制的变量和八进制转义序列都被视为语法错误。</p>
+<h3 id="分享这篇文章"><a href="#分享这篇文章" class="headerlink" title="分享这篇文章:"></a>分享这篇文章:</h3><ul>
+<li><p><a href="http://cjihrig.com/blog/javascripts-strict-mode-and-why-you-should-use-it/?share=facebook" target="_blank" rel="external">Facebook</a></p>
+</li>
+<li><p><a href="http://cjihrig.com/blog/javascripts-strict-mode-and-why-you-should-use-it/?share=twitter" target="_blank" rel="external">Twitter</a></p>
+</li>
+<li><p><a href="http://cjihrig.com/blog/javascripts-strict-mode-and-why-you-should-use-it/?share=google-plus-1" target="_blank" rel="external">Google</a></p>
+</li>
+</ul>
+<blockquote>
+<p>JavaScript的严格模式，以及为什么你应该使用它 | Colin J. Ihrig的博文<br>本文转载自：<a href="http://www.zcfy.cc" target="_blank" rel="external">众成翻译</a><br>译者：<a href="http://www.zcfy.cc/@qhxin" target="_blank" rel="external">qhxin</a><br>链接：<a href="http://www.zcfy.cc/article/1986" target="_blank" rel="external">http://www.zcfy.cc/article/1986</a><br>原文：<a href="http://cjihrig.com/blog/javascripts-strict-mode-and-why-you-should-use-it/" target="_blank" rel="external">http://cjihrig.com/blog/javascripts-strict-mode-and-why-you-should-use-it/</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
+	</div>
+
+      
+
+      
+
+      
+        <div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode"></div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/11/fanyi/you-cant-detect-a-touchscreen/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">你无法检测到触摸屏</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="fanyi/javascripts-strict-mode-and-why-you-should-use-it" data-title="JavaScript的严格模式，以及为什么你应该使用它" data-url="http://qhxin.com/2016/12/12/fanyi/javascripts-strict-mode-and-why-you-should-use-it/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"qhxin"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 青花
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/经验/" style="font-size: 15px;">经验</a> <a href="/tags/翻译/" style="font-size: 20px;">翻译</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com">Github</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://haiwx.github.io">E-Loli</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br/&gt;在这样年轻的时候&lt;br/&gt;经常忘记一些人和事&lt;br/&gt;现在写一些东西&lt;br/&gt;也算是一份记忆</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
