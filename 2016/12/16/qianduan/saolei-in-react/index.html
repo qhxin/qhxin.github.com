@@ -6,21 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qhxin.com">
-  <title>开始尝试React的感受以及遇到的问题 | 青花</title>
+  <title>用React写了一个扫雷游戏 | 青花</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一些废话作为一个技术偏向后端、然后半路开始做一些前端的事情，另外性格比较保守的人，之前一直是用jQuery在做前端，基本上也够用，但是也有在工作中思考一些前端的东西。因为公司的技术栈已经切换为React，随着旧版本的下线，以后应该会经常和它打交道了。
-因为产品的原因，jQuery开发的旧系统确实很难维护，常常改一个地方要考虑非常多的影响。原因呢，旧系统的代码的组织上比较混乱是一方面，另外就是业务逻">
+  <meta name="description" content="学习了一下用React写UI，以及父子兄弟组件之间的通信，由于最近热衷扫雷，所以动手写了一个。
+地址：http://qhxin.com/MyReact/www/SaoLei/index.html
+整个界面分成了四个组件：
+
+设计思路：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开始尝试React的感受以及遇到的问题">
-<meta property="og:url" content="http://qhxin.com/2016/12/14/qianduan/try-react/index.html">
+<meta property="og:title" content="用React写了一个扫雷游戏">
+<meta property="og:url" content="http://qhxin.com/2016/12/16/qianduan/saolei-in-react/index.html">
 <meta property="og:site_name" content="青花">
-<meta property="og:description" content="一些废话作为一个技术偏向后端、然后半路开始做一些前端的事情，另外性格比较保守的人，之前一直是用jQuery在做前端，基本上也够用，但是也有在工作中思考一些前端的东西。因为公司的技术栈已经切换为React，随着旧版本的下线，以后应该会经常和它打交道了。
-因为产品的原因，jQuery开发的旧系统确实很难维护，常常改一个地方要考虑非常多的影响。原因呢，旧系统的代码的组织上比较混乱是一方面，另外就是业务逻">
-<meta property="og:updated_time" content="2016-12-14T15:42:30.000Z">
+<meta property="og:description" content="学习了一下用React写UI，以及父子兄弟组件之间的通信，由于最近热衷扫雷，所以动手写了一个。
+地址：http://qhxin.com/MyReact/www/SaoLei/index.html
+整个界面分成了四个组件：
+
+设计思路：">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/a13e4f59gw1fat0fdfcq1j20nf0hc77j.jpg">
+<meta property="og:updated_time" content="2016-12-16T14:49:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开始尝试React的感受以及遇到的问题">
-<meta name="twitter:description" content="一些废话作为一个技术偏向后端、然后半路开始做一些前端的事情，另外性格比较保守的人，之前一直是用jQuery在做前端，基本上也够用，但是也有在工作中思考一些前端的东西。因为公司的技术栈已经切换为React，随着旧版本的下线，以后应该会经常和它打交道了。
-因为产品的原因，jQuery开发的旧系统确实很难维护，常常改一个地方要考虑非常多的影响。原因呢，旧系统的代码的组织上比较混乱是一方面，另外就是业务逻">
+<meta name="twitter:title" content="用React写了一个扫雷游戏">
+<meta name="twitter:description" content="学习了一下用React写UI，以及父子兄弟组件之间的通信，由于最近热衷扫雷，所以动手写了一个。
+地址：http://qhxin.com/MyReact/www/SaoLei/index.html
+整个界面分成了四个组件：
+
+设计思路：">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/a13e4f59gw1fat0fdfcq1j20nf0hc77j.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -130,41 +141,39 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-qianduan/try-react" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-qianduan/saolei-in-react" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      开始尝试React的感受以及遇到的问题
+      用React写了一个扫雷游戏
     </h1>
   
 
-        <a href="/2016/12/14/qianduan/try-react/" class="archive-article-date">
-  	<time datetime="2016-12-14T14:40:08.400Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-14</time>
+        <a href="/2016/12/16/qianduan/saolei-in-react/" class="archive-article-date">
+  	<time datetime="2016-12-16T14:12:40.550Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-16</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一些废话"><a href="#一些废话" class="headerlink" title="一些废话"></a>一些废话</h2><p>作为一个技术偏向后端、然后半路开始做一些前端的事情，另外性格比较保守的人，之前一直是用jQuery在做前端，基本上也够用，但是也有在工作中思考一些前端的东西。因为公司的技术栈已经切换为React，随着旧版本的下线，以后应该会经常和它打交道了。</p>
-<p>因为产品的原因，jQuery开发的旧系统确实很难维护，常常改一个地方要考虑非常多的影响。原因呢，旧系统的代码的组织上比较混乱是一方面，另外就是业务逻辑很繁杂，耦合度非常高，很难扩展或复用，还有一些地方已经完全没有人记得当初为什么要这样做，以及这个逻辑究竟在干啥。所以利用老大们去重构的这段过渡时间，我也做了一些准备。</p>
+        <p>学习了一下用React写UI，以及父子兄弟组件之间的通信，由于最近热衷扫雷，所以动手写了一个。</p>
+<p>地址：<a href="http://qhxin.com/MyReact/www/SaoLei/index.html">http://qhxin.com/MyReact/www/SaoLei/index.html</a></p>
+<p>整个界面分成了四个组件：</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/a13e4f59gw1fat0fdfcq1j20nf0hc77j.jpg" alt=""></p>
+<p>设计思路：</p>
 <a id="more"></a>
-<p>在我本意，我是不太支持使用太多工具来搞前端的，毕竟简单好用才是最棒的。但问题是目前前端的技术栈并不是太简单，最近几年有很多新事物新玩意被制造出来，又被淘汰，你根本拿不准什么时候社区就丢弃某些你所依赖的东西了，在这样一个不稳定阶段选择一个靠谱的工具是很令我这种对前端社区不太熟的人很感到焦虑的。</p>
-<p>虽然我对社区的动向不是很熟悉，但毕竟还是写了这么久的代码，经过这些年对前端的观察和实践，其实我觉得我只需要这么一些东西即可：</p>
 <ol>
-<li>代码压缩打包工具，这个可以节省带宽和连接数，很实用；</li>
-<li>模块化、组件化、数据和视图分离的规范；</li>
-<li>处理兼容性的javascript的库，jQuery啦；</li>
+<li>父组件是顶层容器，同时拥有标题栏，用户选择难度级别以及重置雷区的交互也是在这个组件上操作；</li>
+<li>统计栏和扫雷区组件是顶层组件的子组件，它们俩是兄弟组件，单元格组件是扫雷区组件的子组件；</li>
+<li>扫雷区组件会在父组件更改难度后，改变宽度，并且重新绘制所有单元格，重置地图和统计；</li>
+<li>扫雷区组件会在父组件点击重置按钮后，重新绘制所有单元格，重置地图和统计；</li>
+<li>单元格组件有鼠标左键以及鼠标右键事件操作，会相应的通知其他组件进行更新状态；</li>
+<li>左键点击翻开一个格子吗，如果遇到周围地雷数目是0的单元格，会遍历周围8个格子，找到未打开并且不是雷的格子，触发左键点击，形成递归遍历。</li>
 </ol>
-<p>其实就这几点，很简单，目前代码压缩和打包是有了的，jQuery也是必须的，那剩下的就是组件化了。实际上，我也在用组件化的思想编程，不过没有像React那样使用虚拟dom来diff更新，也没有用过模板，简单的用数组来拼接用做视图。不过在尝试了React做视图之后，确实觉得还是很方便，毕竟封装了一些需要我手写的东西，特别是jsx的写法，确实很方便。</p>
-<p>目前还没有使用数据流什么的，因为这里是比较有争议的，有人说单向好，有人说双向好，其实我更倾向于双向数据流，业务决定技术选型嘛，再有就是做视图就专心做视图，没必要搞那么臃肿，所以我对React、以及ES的其他一些高级特性以及语法糖目前不是很感兴趣。</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>说说遇到的几个问题：</p>
-<h3 id="1-嵌套组件互相调用方法导致无限回调"><a href="#1-嵌套组件互相调用方法导致无限回调" class="headerlink" title="1. 嵌套组件互相调用方法导致无限回调"></a>1. 嵌套组件互相调用方法导致无限回调</h3><p>这个问题是由于我为了在父子组件之间进行沟通，子组件在 render 时调用了一些 props 里设置的父组件的回调方法，然后在这个回调函数里更新 state，结果就是在render的时候，触发了子组件的 componentWillReceiveProps 方法，因为我在这里做了一些针对 props 改变时更新子组件的 state 的事情，于是构成了一个无限的回调，直至JS报错，汗~~</p>
-<h3 id="2-refs-的成员在未插入DOM时是不存在的"><a href="#2-refs-的成员在未插入DOM时是不存在的" class="headerlink" title="2. refs 的成员在未插入DOM时是不存在的"></a>2. refs 的成员在未插入DOM时是不存在的</h3><p>在子组件A上设置了一个ref，供父组件的方法找到它，另外有一个子组件B，会通知父组件一些事情，然后父组件让组件A来显示。我一开始只在子组件B的getInitialState计算完state初始值的时候就通知父组件，结果就是它的refs里面找不到组件A，原因是需要组件真实被插入DOM之后，才会添加ref到refs里面去，所以应该在componentDidMount的时候再去触发这个通知。以后也应该注意这个问题。</p>
-<h3 id="3-this-setState"><a href="#3-this-setState" class="headerlink" title="3. this.setState()"></a>3. this.setState()</h3><p>只有用this.setState设置state才会更新 render ，直接赋值是不行的。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上面这些问题是因为不熟练造成的，并不是致命问题。总的来说React还是比较简单的，用着也比较顺手，效率较高，适合我们的业务。</p>
+<p>总的来说还是挺简单的。扫雷还是挺有意思。最近玩扫雷着了魔。</p>
 
       
 
@@ -239,18 +248,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/12/16/qianduan/saolei-in-react/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          用React写了一个扫雷游戏
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/12/sushi/fei-cui-bai-yu-tang/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">珍珠翡翠白玉汤</div>
+    <a href="/2016/12/14/qianduan/try-react/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开始尝试React的感受以及遇到的问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -263,7 +263,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="qianduan/try-react" data-title="开始尝试React的感受以及遇到的问题" data-url="http://qhxin.com/2016/12/14/qianduan/try-react/"></div>
+	<div class="ds-thread" data-thread-key="qianduan/saolei-in-react" data-title="用React写了一个扫雷游戏" data-url="http://qhxin.com/2016/12/16/qianduan/saolei-in-react/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
