@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://qhxin.com">
+  <title>Virtual CSS 和 Styletron | 青花</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Styletron 是一个为了高性能而建立的 CSS-in-JS 的库，旨在运行得尽可能的快，同时尽可能小的输出 CSS。
+大部分 CSS-in-JS 库将 JS 对象包含样式声明为相应的 CSS 类并使用生成的散列作为类名1。总的来说，这一过程运行良好，解决了大多数的CSS问题2。
+Styletron 采取了不同的方法。它使用一个“虚拟CSS”引擎，抽象了底层的 CSS ，并启用一些强大的性能优">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Virtual CSS 和 Styletron">
+<meta property="og:url" content="http://qhxin.com/2016/12/17/fanyi/virtual-css-with-styletron/index.html">
+<meta property="og:site_name" content="青花">
+<meta property="og:description" content="Styletron 是一个为了高性能而建立的 CSS-in-JS 的库，旨在运行得尽可能的快，同时尽可能小的输出 CSS。
+大部分 CSS-in-JS 库将 JS 对象包含样式声明为相应的 CSS 类并使用生成的散列作为类名1。总的来说，这一过程运行良好，解决了大多数的CSS问题2。
+Styletron 采取了不同的方法。它使用一个“虚拟CSS”引擎，抽象了底层的 CSS ，并启用一些强大的性能优">
+<meta property="og:image" content="http://s0.qhres.com/static/0b07c4c1a204e28f.svg">
+<meta property="og:image" content="http://s2.qhres.com/static/486b8139e9a9e3e6.svg">
+<meta property="og:image" content="http://s2.qhres.com/static/4910d0882cd3987a.svg">
+<meta property="og:image" content="http://s4.qhres.com/static/1fc977e5fa9c7f1e.svg">
+<meta property="og:image" content="http://s0.qhres.com/static/6c30966bd2cc3b05.svg">
+<meta property="og:image" content="http://s1.qhres.com/static/5e1d85d2d3d9e0ec.svg">
+<meta property="og:image" content="http://s0.qhres.com/static/538c251afea49099.svg">
+<meta property="og:image" content="http://s4.qhres.com/static/39eda649e71ed46e.svg">
+<meta property="og:updated_time" content="2016-12-17T10:44:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Virtual CSS 和 Styletron">
+<meta name="twitter:description" content="Styletron 是一个为了高性能而建立的 CSS-in-JS 的库，旨在运行得尽可能的快，同时尽可能小的输出 CSS。
+大部分 CSS-in-JS 库将 JS 对象包含样式声明为相应的 CSS 类并使用生成的散列作为类名1。总的来说，这一过程运行良好，解决了大多数的CSS问题2。
+Styletron 采取了不同的方法。它使用一个“虚拟CSS”引擎，抽象了底层的 CSS ，并启用一些强大的性能优">
+<meta name="twitter:image" content="http://s0.qhres.com/static/0b07c4c1a204e28f.svg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">青花</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">因果业缘，真实不虚</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="mail" target="_blank" href="mailto:qhxin@qhxin.com" title="mail"><i class="icon-mail"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-sort"></i></div>
+  		<h1 class="header-author js-mobile-header hide">青花</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/images/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">青花</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">因果业缘，真实不虚</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="mail" target="_blank" href="mailto:qhxin@qhxin.com" title="mail"><i class="icon-mail"></i></a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-fanyi/virtual-css-with-styletron" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Virtual CSS 和 Styletron
+    </h1>
+  
+
+        <a href="/2016/12/17/fanyi/virtual-css-with-styletron/" class="archive-article-date">
+  	<time datetime="2016-12-17T10:41:43.430Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-17</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Styletron 是一个为了高性能而建立的 CSS-in-JS 的库，旨在运行得尽可能的快，同时尽可能小的输出 CSS。</p>
+<p>大部分 CSS-in-JS 库将 JS 对象包含样式声明为相应的 CSS 类并使用生成的散列作为类名<a href="#fn-1">1</a>。总的来说，这一过程运行良好，解决了大多数的CSS问题<a href="#fn-2">2</a>。</p>
+<p><a href="https://github.com/rtsao/styletron" target="_blank" rel="external">Styletron</a> 采取了不同的方法。它使用一个“虚拟CSS”引擎，抽象了底层的 CSS ，并启用一些强大的性能优化。</p>
+<a id="more"></a>
+<h3 id="原子-CSS-和虚拟类"><a href="#原子-CSS-和虚拟类" class="headerlink" title="原子 CSS 和虚拟类"></a>原子 CSS 和虚拟类</h3><p>关键的想法是，Styletron 把所有东西分解成唯一的声明，并且为每一个唯一属性值对创建一个对应的“原子CSS”类<a href="#fn-3">3</a>，而不是生成简单地1:1映射到源样式对象的CSS类。结果就是，Styletron 可以对应的生成由几个原子类组成的虚拟类，而不是生成整块的样式。</p>
+<p><img src="http://s0.qhres.com/static/0b07c4c1a204e28f.svg" alt=""></p>
+<p>这种抽象获得了几个性能优势：</p>
+<h3 id="非增长的样式"><a href="#非增长的样式" class="headerlink" title="非增长的样式"></a>非增长的样式</h3><p>最终在给定的应用里只有有限数量的不同字体大小，宽度和颜色。并且在实践中，为设计一致性的目的，这些选项经常被有意地限制在一组共用的值中，然后在应用中多次重复这些共用值。</p>
+<p>Styletron 可以利用这点，因为它的虚拟 CSS 抽象在声明层面就去除了重复的样式，即使是不同的规则。在某种意义上，CSS 变成了非增长的：在某种程度上，新添加的样式实际上只是预先存在的声明的新排列，它映射到已经存在的原子类，生成CSS是零附加字节的。换句话说，虚拟 CSS 的 CSS 输出规模的大小由唯一样式声明的数量决定，而不是使用的样式的数量或频率。</p>
+<p>在实践中，这会对尺寸产生巨大的影响，特别是在声明的总数远远超过唯一声明数目的大型网站。</p>
+<h3 id="最小的可能的样式"><a href="#最小的可能的样式" class="headerlink" title="最小的可能的样式"></a>最小的可能的样式</h3><p>CSS 优化的很重要的一点是把关键的和非关键的 CSS 分开，并且除掉没有使用的 CSS，这些没有使用的 CSS 白白浪费了浏览器的下载和解析。和许多其他的 CSS-in-JS 解决方案一样，Styletron 自动地在它的输出里面消除了任何没有使用的以及非关键的 CSS，只留下关键的CSS 给任何给定的服务器渲染的页面。</p>
+<p>这通常是和它得到的一样好的，但是，即使是在消除了非关键的和未使用的 CSS之后，Styletron 还更进一步地减少了关键样式表的大小。虽然 gzip 通常是一个好的压缩样式表的方法，但在 Styletron里，所有的重复的声明都在 gzip 压缩之前被清理了。结果就是，浏览器可以更少地下载和解析，后者是不受 gzip 影响的。</p>
+<p>此外，因为由 Styletron 生成的样式表是如此的小，他们能够很容易的内联到页面里去。这和页面的性能有关：确保移动设备上的快速加载时间，<a href="https://www.ampproject.org/" target="_blank" rel="external">AMP 规范</a>实际上禁止外部 CSS 资源，强制所有的 CSS 内联（有一个 50KB 的最大尺寸限制）。</p>
+<h3 id="很快的运行速度"><a href="#很快的运行速度" class="headerlink" title="很快的运行速度"></a>很快的运行速度</h3><p>Styletron 是为高性能设计的，不仅在小的 CSS 输出方面，还有执行时间。和许多其他生产有限范围散列的 CSS 的 CSS-in-JS 库不一样，Styletron 不需要执行性能昂贵的哈希计算；相反，它生成的类由共享的、复用的、有序列化标识符的原子类组成<a href="#fn-4">4</a>。此外，因为它是在个体的声明而不是整体规则上操作，Styletron 可以减少缓存未命中并且利用非常精细的记忆以避免不必要的工作。</p>
+<h2 id="程序基准测试"><a href="#程序基准测试" class="headerlink" title="程序基准测试"></a>程序基准测试</h2><p><a href="https://github.com/hellofresh/css-in-js-perf-tests" target="_blank" rel="external">css-in-js-perf-tests 库</a>有许多针对大多数受欢迎的 CSS-in-JS 库的基准测试，包括 Aphrodite，Glamor，JSS，还有 Syletron。下面显示的数字是在我的 MacBook Pro 上用 Node7 运行基准测试的结果。</p>
+<p>注：下面的 JSS 的基准测试表明没有使用默认预设，所以没有包含额外的如嵌套规则或第三方前缀。</p>
+<h3 id="渲染性能"><a href="#渲染性能" class="headerlink" title="渲染性能"></a>渲染性能</h3><p><strong>简单的样式测试</strong></p>
+<p>这个测试渲染少量的<a href="https://github.com/hellofresh/css-in-js-perf-tests/blob/master/src/simple-test/styles.js" target="_blank" rel="external">基础样式</a>，一个是容器，一个是按钮。</p>
+<p><img src="http://s2.qhres.com/static/486b8139e9a9e3e6.svg" alt=""></p>
+<p><strong>样式过载测试</strong></p>
+<p>这个测试给<code>n</code>个不一样的按钮元素生成<code>n</code>个独有的样式，默认情况下<code>n=20</code>。</p>
+<p><img src="http://s2.qhres.com/static/4910d0882cd3987a.svg" alt=""></p>
+<p><strong>类过载测试</strong></p>
+<p>这个测试给<code>n</code>个不一样的按钮元素生成<code>n</code>个完全一样的样式，同样地，默认情况下<code>n=20</code>。</p>
+<p>不像其他的库，Styletron 分解了规则，因此能够记住相同的声明，因此，在这个测试中的性能优势尤为明显。</p>
+<p><img src="http://s4.qhres.com/static/1fc977e5fa9c7f1e.svg" alt=""></p>
+<h3 id="CSS输出结果的大小"><a href="#CSS输出结果的大小" class="headerlink" title="CSS输出结果的大小"></a>CSS输出结果的大小</h3><p>作为一个大的 CSS-in-JS 应用的模拟，我使用<a href="https://www.uber.com" target="_blank" rel="external">uber.com</a>和<a href="https://www.airbnb.com" target="_blank" rel="external">airbnb.com</a>的CSS，<a href="https://github.com/rtsao/styletron/blob/master/packages/benchmarks/generate-styles.js" target="_blank" rel="external">转换</a>这些样式为 JS 的等价对象，然后在 Styletron、JSS、Glamor 和 Aphrodite 里处理它们。以下是 CSS 输出文件的大小结果：</p>
+<p><strong>uber.com CSS</strong> - <a href="https://raw.githubusercontent.com/rtsao/styletron/master/packages/benchmarks/fixtures/css/uber.css" target="_blank" rel="external">原文件</a></p>
+<p><img src="http://s0.qhres.com/static/6c30966bd2cc3b05.svg" alt=""></p>
+<p><strong>airbnb.com CSS</strong> - <a href="https://raw.githubusercontent.com/rtsao/styletron/master/packages/benchmarks/fixtures/css/airbnb.css" target="_blank" rel="external">原文件</a></p>
+<p><img src="http://s1.qhres.com/static/5e1d85d2d3d9e0ec.svg" alt=""></p>
+<p>一般来说，复用的样式越多，随着越来越多的 CSS 被去重，Styletron （和其他库比起来）生成的CSS越小。</p>
+<h3 id="JS-包大小（最小化的）"><a href="#JS-包大小（最小化的）" class="headerlink" title="JS 包大小（最小化的）"></a>JS 包大小（最小化的）</h3><p>Styletron 还是这些库里面最小的。它尽可能的被设计得小，而且客户端和服务端的包是分离的，这有助于减少臃肿。</p>
+<p><img src="http://s0.qhres.com/static/538c251afea49099.svg" alt=""></p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>实际的核心 Styletron 模块是非常低级的，这让它对于许多不同的 CSS-in-JS 接口是高适应性的，但直接使用是很笨重的。</p>
+<p>最简单的方法是 Styletron 和 styletron-utils 包一起使用，styletron-utils 包包含各种方便功能，包括获取样式对象并返回相应虚拟类名的<code>injectStyle</code>。这个接口大致和其他 CSS-in-JS 库提供的接口一样。</p>
+<p>最后，在最高水平，有一个 styletron-react 包，它有一个接口是受 React 优秀的 <a href="https://github.com/styled-components/styled-components" target="_blank" rel="external">styled-components</a> 模块启发的灵感。</p>
+<p>参考 <a href="https://github.com/rtsao/styletron" target="_blank" rel="external">GitHub repo</a> 和 <a href="http://styletron.js.org" target="_blank" rel="external">styletron.js.org</a> 可以了解更多。</p>
+<h2 id="已知问题和权衡"><a href="#已知问题和权衡" class="headerlink" title="已知问题和权衡"></a>已知问题和权衡</h2><p><strong>后代选择器和子选择器是不受支持的</strong></p>
+<p>虽然在使用 React（样式与模板和渲染逻辑在一个地方）的时候这些东西不是经常地使用，它们在某些情况下仍然有用<a href="#fn-5">5</a>。就是说，由于技术原因，这些可能不会在 Styletron 得到支持，至少在短期内。幸运的是，任何在 CSS 里由后代选择器和子选择器可以实现的效果都可以由渲染逻辑（JavaScript）实现。</p>
+<p><strong>至今没有降级处理</strong></p>
+<p><a href="https://github.com/rtsao/styletron/issues/6" target="_blank" rel="external">这是正在制定的问题</a>，但目前没有实施。</p>
+<p><strong>本地工具的工作流的影响</strong></p>
+<p>使用虚拟类的一个结果是，当检查元素时，将在样式面板中看到每个声明的类，有时是很麻烦的。此外，在 Chrome 的本地开发工具里，客户端渲染的原子类是不变的——他们在元素上可以被打开和关闭，但是由于 Chromium 的 bug<a href="#fn-6">6</a> 而不会改变。服务端渲染的样式是不受影响的，这个 bug 只影响 Chrome（Safari 和 Firefox 上表现得很好）</p>
+<h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><hr>
+<ol>
+<li>多数 CSS-in-JS 库，包括 Aphrodite、Glamor、JSS，等等。使用下面的方法：</li>
+</ol>
+<p><img src="http://s4.qhres.com/static/39eda649e71ed46e.svg" alt=""></p>
+<p>类名称生成作用域的方法虽然不同，但这都是一个在生成的CSS类声明的集合之间 1:1 的映射。</p>
+<p><a href="#fnref-1">↩</a></p>
+<ol>
+<li>Christopher Chedeau 的 <a href="http://blog.vjeux.com/2014/javascript/react-css-in-js-nationjs.html" target="_blank" rel="external">开创性的介绍 CSS-in-JS</a> 提供了一个良好的CSS缺陷概述以及在 JavaScript 中的样式怎么成为一个解决方案。</li>
+</ol>
+<p><a href="#fnref-2">↩</a></p>
+<ol>
+<li><p>这在概念上类似于 <a href="https://github.com/necolas/react-native-web" target="_blank" rel="external">react-native-web</a> 样式表模块（这实际上开创了为服务端渲染网页生成原子 CSS 的思想），但是 Styletron 以几个关键的方式使它更进一步：</p>
+</li>
+<li><p>Styletron 为所有样式工作——静态和动态的都可以。react-native-web 样式表仅限于可以在渲染之外解决的静态样式。</p>
+</li>
+<li><p>react-native-web 样式表仅在服务端工作；在客户端，使用普通的 React 内联样式。</p>
+</li>
+<li><p>react-native-web 缺少媒体查询和伪类的支持, Styletron 支持这两者。</p>
+</li>
+</ol>
+<p><a href="#fnref-3">↩</a></p>
+<ol>
+<li>使用确定性散列的一个原因是服务器和客户机渲染之间的一致性。因为 Styletron 的 CSS 输出仅由单一声明的原子类组成，它本质上是一个来自服务器的声明缓存的全序列化。因此，服务端渲染的 CSS 可以有效地反序列化，完全混合在客户端缓存的状态。</li>
+</ol>
+<p><a href="#fnref-4">↩</a></p>
+<ol>
+<li>后代选择器和伪类相结合是很有用的，最常见的用例是在父节点的悬停状态触发子节点的样式更改。然而，如果需要的话，这种行为可以在 JavaScript 中以事件监听和显式状态变化的方式得以实现。</li>
+</ol>
+<p><a href="#fnref-5">↩</a></p>
+<ol>
+<li>不幸的是，<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=387952" target="_blank" rel="external">这个 bug 目前是被标记为不会修复</a>。</li>
+</ol>
+<p><a href="#fnref-6">↩</a></p>
+<h1 id="Virtual-CSS-和-Styletron"><a href="#Virtual-CSS-和-Styletron" class="headerlink" title="Virtual CSS 和 Styletron"></a>Virtual CSS 和 Styletron</h1><blockquote>
+<p>本文转载自：<a href="http://www.zcfy.cc" target="_blank" rel="external">众成翻译</a><br>译者：<a href="http://www.zcfy.cc/@qhxin" target="_blank" rel="external">qhxin</a><br>链接：<a href="http://www.zcfy.cc/article/1996" target="_blank" rel="external">http://www.zcfy.cc/article/1996</a><br>原文：<a href="https://ryantsao.com/blog/virtual-css-with-styletron" target="_blank" rel="external">https://ryantsao.com/blog/virtual-css-with-styletron</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
+	</div>
+
+      
+
+      
+
+      
+        <div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode"></div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/16/qianduan/saolei-in-react/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用React写了一个扫雷游戏</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="fanyi/virtual-css-with-styletron" data-title="Virtual CSS 和 Styletron" data-url="http://qhxin.com/2016/12/17/fanyi/virtual-css-with-styletron/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"qhxin"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 青花
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/素食/" style="font-size: 10px;">素食</a> <a href="/tags/经验/" style="font-size: 15px;">经验</a> <a href="/tags/翻译/" style="font-size: 20px;">翻译</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com">Github</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://haiwx.github.io">E-Loli</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br/&gt;在这样年轻的时候&lt;br/&gt;经常忘记一些人和事&lt;br/&gt;现在写一些东西&lt;br/&gt;也算是一份记忆</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
