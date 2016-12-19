@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://qhxin.com">
+  <title>在树莓派上安装 Node.js 的指引 | thisDaveJ | 青花</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这篇文章已经更新了，包涵了 Node 最近一个版本的安装，在写这篇文章的时候是 Node 7.x。
+
+在我们这批LTM（Learning through Making）Node.js系列教程，我们将在树莓派3或者2上准备和运行 Node。在树莓派3上，你不需要购买独立的USB Wi-Fi适配器。我专注于树莓派3和2，而不是老版本的诸如树莓派B+，因为在写这篇文章时它们是最新的型号。在树莓派3，举">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在树莓派上安装 Node.js 的指引 | thisDaveJ">
+<meta property="og:url" content="http://qhxin.com/2016/12/19/fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi/index.html">
+<meta property="og:site_name" content="青花">
+<meta property="og:description" content="这篇文章已经更新了，包涵了 Node 最近一个版本的安装，在写这篇文章的时候是 Node 7.x。
+
+在我们这批LTM（Learning through Making）Node.js系列教程，我们将在树莓派3或者2上准备和运行 Node。在树莓派3上，你不需要购买独立的USB Wi-Fi适配器。我专注于树莓派3和2，而不是老版本的诸如树莓派B+，因为在写这篇文章时它们是最新的型号。在树莓派3，举">
+<meta property="og:image" content="http://p0.qhimg.com/t01a338d9df1b02a7f7.jpg">
+<meta property="og:image" content="http://p0.qhimg.com/t01f42d8cf7dfc8ee2b.jpg">
+<meta property="og:image" content="http://p0.qhimg.com/t015ca75f4f066ea170.png">
+<meta property="og:image" content="http://p0.qhimg.com/t01ff562c8a3b88e7c5.png">
+<meta property="og:image" content="http://p0.qhimg.com/t019b39af645dcf085e.png">
+<meta property="og:image" content="http://p0.qhimg.com/t012071d5895a619ae0.png">
+<meta property="og:image" content="http://p0.qhimg.com/t013e36e5ec4df7354b.png">
+<meta property="og:image" content="http://p0.qhimg.com/t011b7ff501061ffcb8.png">
+<meta property="og:image" content="http://p0.qhimg.com/t01939eb36ee49762d3.png">
+<meta property="og:image" content="http://p0.qhimg.com/t01cb78a37604acd97c.png">
+<meta property="og:image" content="http://p0.qhimg.com/t01a09b2533fd768331.png">
+<meta property="og:image" content="http://p0.qhimg.com/t014509bd1f4f566afa.png">
+<meta property="og:image" content="http://p0.qhimg.com/t01bc0fef5800a1b5ec.png">
+<meta property="og:image" content="http://p0.qhimg.com/t019b0728706ea4ece8.png">
+<meta property="og:image" content="http://p0.qhimg.com/t01f9896dbb594b2e10.png">
+<meta property="og:image" content="http://p0.qhimg.com/t01f5c62c18c4265129.png">
+<meta property="og:image" content="http://p0.qhimg.com/t0157e83003a43782ea.png">
+<meta property="og:updated_time" content="2016-12-19T14:39:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在树莓派上安装 Node.js 的指引 | thisDaveJ">
+<meta name="twitter:description" content="这篇文章已经更新了，包涵了 Node 最近一个版本的安装，在写这篇文章的时候是 Node 7.x。
+
+在我们这批LTM（Learning through Making）Node.js系列教程，我们将在树莓派3或者2上准备和运行 Node。在树莓派3上，你不需要购买独立的USB Wi-Fi适配器。我专注于树莓派3和2，而不是老版本的诸如树莓派B+，因为在写这篇文章时它们是最新的型号。在树莓派3，举">
+<meta name="twitter:image" content="http://p0.qhimg.com/t01a338d9df1b02a7f7.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">青花</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">因果业缘，真实不虚</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="mail" target="_blank" href="mailto:qhxin@qhxin.com" title="mail"><i class="icon-mail"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-sort"></i></div>
+  		<h1 class="header-author js-mobile-header hide">青花</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="/images/avatar.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">青花</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">因果业缘，真实不虚</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="mail" target="_blank" href="mailto:qhxin@qhxin.com" title="mail"><i class="icon-mail"></i></a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在树莓派上安装 Node.js 的指引 | thisDaveJ
+    </h1>
+  
+
+        <a href="/2016/12/19/fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi/" class="archive-article-date">
+  	<time datetime="2016-12-19T14:26:37.120Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-19</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这篇文章已经更新了，包涵了 Node 最近一个版本的安装，在写这篇文章的时候是 Node 7.x。</p>
+</blockquote>
+<p>在我们这批LTM（Learning through Making）Node.js系列教程，我们将在树莓派3或者2上准备和运行 Node。在树莓派3上，你不需要购买独立的USB Wi-Fi适配器。我专注于树莓派3和2，而不是老版本的诸如树莓派B+，因为在写这篇文章时它们是最新的型号。在树莓派3，举个例子来说，它有一个 1.2GHz 的四核 ARMv8 芯片和 1GB 的内存，相比起来，树莓派1的B+型号只有 700MHz 的单核 ARMv6 芯片以及 512MB 的内存。</p>
+<p>这里提供的介绍是为在树莓派3（ARMv8）或者树莓派2（ARMv7）上安装 Node.js 准备的而不是其它的基于 ARMv6 芯片的型号，诸如树莓派1的B型号、B+型号或者树莓派0。这个安装指南的大部分应该仍然被证明对除了派2和派3以外的其它树莓派系统是有用的；然而，最后的步骤重点在于它不会在基于老 ARMv6 架构的系统上工作。<br><a id="more"></a><br>本教程对于任何希望成功安装树莓派2或3系统的人都是有用的，即使他们对于 Node.js 并不感兴趣，因为 Node.js 的安装发生在本教程的最后一步。但是，为什么你不想安装 Node.js呢？让我们开始吧！</p>
+<h3 id="内容目录"><a href="#内容目录" class="headerlink" title="内容目录"></a>内容目录</h3><ul>
+<li><p><a href="#hardware-needed">需要的硬件</a></p>
+</li>
+<li><p><a href="#create-image">写 Raspbian 镜像像到SD卡</a></p>
+</li>
+<li><p><a href="#prep-hardware">准备硬件</a></p>
+</li>
+<li><p><a href="#configure">配置 RasPi</a></p>
+</li>
+<li><p><a href="#wifi">配置 Wi-Fi</a></p>
+</li>
+<li><p><a href="#apply-updates">应用 Raspbian 的更新</a></p>
+</li>
+<li><p><a href="#remote-desktop">准备远程桌面</a></p>
+</li>
+<li><p><a href="#windows-file-share">在 RasPi 创建 Windows 文件共享（可选）</a></p>
+</li>
+<li><p><a href="#install-node">安装 Node.js</a></p>
+</li>
+<li><p><a href="#next-time">下一次</a></p>
+</li>
+</ul>
+<h3 id="需要的硬件"><a href="#需要的硬件" class="headerlink" title=" 需要的硬件"></a><img src="http://p0.qhimg.com/t01a338d9df1b02a7f7.jpg" alt="树莓派"> 需要的硬件</h3><p>如果你现在没有树莓派，最简单的方法是购买一个入门套件，如亚马逊上的这一个：</p>
+<ul>
+<li><a href="http://www.amazon.com/gp/product/B01C6Q2GSY/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B01C6Q2GSY&amp;linkCode=as2&amp;tag=thisdavej-20&amp;linkId=VRAGHJ2RQIMQQTVG" target="_blank" rel="external">CanaKit Raspberry Pi 3 完整的初学者套件 – 32 GB 版</a> （注：我的会员信息包括在亚马逊链接里，所以你可以，如果你想，支持这些教程而不用付出额外的消费。）</li>
+</ul>
+<p>我们需要以下项目来作为开始：</p>
+<ul>
+<li><p>树莓派3的型号B或者树莓派2的型号B（这些都是树莓派3和2的官方的名字。<strong>不要让“B”混淆你，因为还有一个老的树莓派型号B，现在实际上是“树莓派1型号B”</strong>。）</p>
+</li>
+<li><p>MicroSD卡（我推荐一个 CLASS10 的卡，它是 16 GB 或更高。我喜欢这个<a href="http://www.amazon.com/gp/product/B00IVPU786/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00IVPU786&amp;linkCode=as2&amp;tag=thisdavej-20&amp;linkId=CXW5WB6NJTW2VVAE" target="_blank" rel="external">三星 32GB Class 10 microSD card</a>。）</p>
+</li>
+<li><p>MicroSD 转 SD 存储卡适配器（因此，你可以使用 SD 读卡器在你的笔记本/桌面电脑写入 MicroSD 卡。如下所示，有许多的 microSD 卡供应商在购买的时候包含SD适配器。）</p>
+</li>
+</ul>
+<p><img src="http://p0.qhimg.com/t01f42d8cf7dfc8ee2b.jpg" alt="SD 卡适配器"></p>
+<ul>
+<li><p>微型 USB 电源（推荐 2.5A 或者更大）为 RasPi 供电。</p>
+</li>
+<li><p>（仅在 RasPi 2 需要）USB WiFi 网卡（或优先以太网电缆的。我已经在树莓派上测试过这个<a href="http://www.amazon.com/gp/product/B003MTTJOY/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B003MTTJOY&amp;linkCode=as2&amp;tag=thisdavej-20&amp;linkId=RZGOFLPTQIH5ASNB" target="_blank" rel="external">Edimax USB WiFi 网卡</a>，并且它工作得非常好。这是一个它在亚马逊畅销的原因。）在树莓派3上因为有内置 Wi-Fi 所以不需要它。</p>
+</li>
+<li><p>Windows 笔记本电脑/台式机（Linux 或者 Mac 也能极好的工作，但是本教程面向Windows机器，所以一些读者将需要调整）</p>
+</li>
+<li><p>HDMI显示器、USB键盘/鼠标（你可以从另一个系统暂时借用这些设备，然后运行你的 RasPi 在无外设模式，稍后我会解释。）</p>
+</li>
+</ul>
+<p>一旦你收集所需的硬件，我们准备好了让我们的 RasPi 苏醒了！</p>
+<h3 id="将-Raspbian-镜像写入-SD-卡"><a href="#将-Raspbian-镜像写入-SD-卡" class="headerlink" title="将 Raspbian 镜像写入 SD 卡"></a>将 Raspbian 镜像写入 SD 卡</h3><p>我们将运行 Raspbian，这是一个基于 Debian Linux 的免费操作系统并且为树莓派做了优化。<br>让我们开始吧：</p>
+<ul>
+<li><p>从 <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/raspbian/</a> 下载最新的 Raspbian 镜像。请下载完整版本，而不是“精简”版。下载的是一个ZIP文件，约1.5 GB，所以它可能需要一些时间下载，这取决于你的互联网连接速度。</p>
+</li>
+<li><p>插入microSD卡到SD适配器，就像在上面的三星示例图片所示的那样。</p>
+</li>
+<li><p>将 SD 卡适配器插到笔记本电脑/桌面电脑的 SD读卡器。确保它很好的连接固定了。</p>
+</li>
+<li><p>启动Windows资源管理器，并验证SD卡作为驱动器在您的系统上注册。请注意驱动器盘符，因为你很快将需要它。</p>
+</li>
+<li><p>下载并安装 <a href="https://www.etcher.io/" target="_blank" rel="external">Etcher</a>。Etcher是一个跨平台（Windows，OS X，Linux）的闪存镜像到SD卡的工具。它有许多很棒的功能，包括一个简单的用户界面、闪存镜像而不需要解压zip文件的能力、以及一个验证步骤用于验证SD卡镜像是否正确写入SD卡。</p>
+</li>
+<li><p>（对于 Windows 用户来说有一个可供替代的选择，你可以使用 <a href="https://sourceforge.net/projects/win32diskimager/" target="_blank" rel="external">Win32 磁盘镜像</a>，因为它也提供了读取SD卡、并创建一个镜像文件的能力，这对于创建树莓派系统的快照是很方便的，如果需要的话，这个快照也可以被闪存回SD卡。对于Win32 磁盘镜像，你需要在往你的正确的SD卡盘符烧写.img文件之前，先解压这个下载的zip文件）</p>
+</li>
+<li><p>启动 Etcher。要有耐心，Etcher 需要数秒启动。启动后，界面看起来像这样：</p>
+</li>
+</ul>
+<p><img src="http://p0.qhimg.com/t015ca75f4f066ea170.png" alt="etcher"></p>
+<ul>
+<li><p>点击 Select image（选择镜像）按钮，找到你下载的 Raspbian 的 zip 文件。（在烧写之前不需要解压。）</p>
+</li>
+<li><p>点击 Select drive（选择驱动器）按钮，指定 SD 卡的目标设备位置。</p>
+</li>
+</ul>
+<p>警告：请确定你选择了正确的目标设备，否则你会将镜像写入到你系统的另一个驱动器，这将是不妙的。</p>
+<ul>
+<li><p>点击 Flash 按钮，将镜像写到 SD 卡上。</p>
+</li>
+<li><p>如果你正在运行Windows，可能会出现有关更改设备的安全提示。如果是这样的话，请单击“Yes”继续进行。</p>
+</li>
+<li><p>当镜像被写入SD卡和通过验证之后，Etcher会自动卸载你的SD卡，它可以安全地被移除。</p>
+</li>
+<li><p>从你的笔记本电脑/台式机取出SD适配器，并从SD适配器移除microSD卡。</p>
+</li>
+</ul>
+<h3 id="准备硬件"><a href="#准备硬件" class="headerlink" title="准备硬件"></a>准备硬件</h3><p><a href="http://techbrickcafe.blogspot.com/2015/10/raspberry-pi-2-model-b-single-board.html" target="_blank" rel="external">Tech Brick Café</a>有一个很好的树莓派2各部分的概览图<a href="http://1.bp.blogspot.com/-v9M2cZM4BJo/Vi4l_fie0sI/AAAAAAAAAAw/9aa1y3-hhVQ/s400/Raspberry_pi_2_2.PNG" target="_blank" rel="external">在这里</a>（树莓派3看起来非常相似），这可能会在这一部分内容里帮助你。让我们这个小小的SBC（single board computer）准备启动！这里是步骤：</p>
+<ul>
+<li><p>插入microSD卡到树莓派。（把树莓派颠倒。microSD卡槽位于USB端口对面那一侧。这个<a href="https://www.youtube.com/watch?v=PCcXa4UFeLg" target="_blank" rel="external">短视频</a>很好地解释了这个过程。）</p>
+</li>
+<li><p>连接USB键盘和鼠标</p>
+</li>
+<li><p>连接HDMI线</p>
+</li>
+<li><p>连接USB Wi-Fi适配器（或以太网连接，如果你不使用Wi-Fi），如果你使用的是树莓派3，这一步是没有必要的，有内置Wi-Fi。</p>
+</li>
+<li><p>接通电源（你会看到树莓派灯亮并通电了。）</p>
+</li>
+<li><p>你现在应该看到树莓派在屏幕上启动。万岁!</p>
+</li>
+</ul>
+<h3 id="配置树莓派"><a href="#配置树莓派" class="headerlink" title="配置树莓派"></a>配置树莓派</h3><p>我们首先需要做一些 RasPi 的改动，为的是为我们的使用进行优化和个性化。开始，启动树莓派配置程序，它位于Preferences下面的菜单里。</p>
+<p><img src="http://p0.qhimg.com/t01ff562c8a3b88e7c5.png" alt="RasPi configuration GUI"></p>
+<p>这将启动树莓派配置程序，这是基于控制台配置程序的一个方便的图形版本，这个控制台程序已经被使用多年用来配置树莓派（实际上，这个控制台程序仍然用于这个图形版本幕后使用）。这将启动以下窗口：</p>
+<p><img src="http://p0.qhimg.com/t019b39af645dcf085e.png" alt="rcg1"></p>
+<p>让我们开始配置吧！</p>
+<ul>
+<li><p>Expand Filesystem（扩展文件系统）——单击此按钮可扩展文件系统。这将确保所有的SD卡存储对 Raspbian 可用。</p>
+</li>
+<li><p>（可选）Change Password（更改密码）——从安全的角度，改变“pi”用户的默认密码是个好主意。只要确保你不忘记它。 😉</p>
+</li>
+<li><p>Hostname（主机名）——如果远程连接时你喜欢打更少的字（在后面有解释），您可以更改主机名称“raspberrypi”更短一些，如“raspi”。</p>
+</li>
+</ul>
+<h4 id="本地化"><a href="#本地化" class="headerlink" title="本地化"></a>本地化</h4><p>树莓派是我们英国朋友的精彩创意。如果您不是来自英国，你将需要更改一些本地化设置。例如，键盘上的某些键可能无法按预期的方式工作。这是我在圣地亚哥做的一些改动，这让我的树莓派更加舒适：</p>
+<p>首先，单击 Localisation 选项卡:</p>
+<p><img src="http://p0.qhimg.com/t012071d5895a619ae0.png" alt="localization"></p>
+<p>点击 Set Locale 按钮，更改你的区域为适当的设置然后点击 OK。在更改设置后，我的看起来就像这样：</p>
+<p><img src="http://p0.qhimg.com/t013e36e5ec4df7354b.png" alt="localization details"></p>
+<p>点击 Set Timezone 按钮，设置你的时区，然后点击 OK。</p>
+<p><img src="http://p0.qhimg.com/t011b7ff501061ffcb8.png" alt="set timezone"></p>
+<p>点击 Set Keyboard 按钮，更改你的键盘为合适的设置，然后点击 OK。这是我的：</p>
+<p><img src="http://p0.qhimg.com/t01939eb36ee49762d3.png" alt="set keyboard"></p>
+<p>最后，点击 Set WiFi Country 按钮并按需要更改设置。这个对话框列出了大量的国家列表。用你的键盘上的箭头键滚动列表找到你的国家然后点击 OK。</p>
+<p><img src="http://p0.qhimg.com/t01cb78a37604acd97c.png" alt="wifi country"></p>
+<p>完成这些配置步骤后，点击 OK 退出树莓派配置程序。树莓派然后将通知你它需要重启以便激活你刚才的设置。现在重新启动它。</p>
+<h3 id="配置Wi-Fi"><a href="#配置Wi-Fi" class="headerlink" title="配置Wi-Fi"></a>配置Wi-Fi</h3><p>在树莓派重启后，我们已经准备和运行 Wi-Fi 以获得网络。</p>
+<ul>
+<li>点击屏幕右上方的网络图标，如截图所示。在Wi-Fi配置之前，网络图标将与截图中的图标不同；但是，它应该位于蓝牙图标和扬声器（音量控制）图标之间。</li>
+</ul>
+<p><img src="http://p0.qhimg.com/t01a09b2533fd768331.png" alt="wifi"></p>
+<ul>
+<li><p>在点击网络图标之后，选择你的网络SSID（Wi-Fi网络）。如果你没有看到你的Wi-Fi网络，请耐心等待。你可能会在菜单里看到一个“Scanning APs（扫描AP）”的消息；然而当它找出后，你的Wi-Fi网络SSID应该最终出现在菜单里。当你的网络的名称出现后，点击它。</p>
+</li>
+<li><p>你将被提示输入你的预共享（Wi-Fi）网络密码。输入它然后选择 OK。</p>
+</li>
+<li><p>等待图标从网络图标转换到上面截图里显示的Wi-Fi图标。从这一点判断，你应该已经连接上了你的Wi-Fi网络。</p>
+</li>
+<li><p>通过启动终端测试您的Wi-Fi网络连接。</p>
+</li>
+</ul>
+<p><img src="http://p0.qhimg.com/t014509bd1f4f566afa.png" alt="terminal"></p>
+<ul>
+<li>从终端，发出ping命令，以验证您的网络连接正在工作：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ping google.com</div></pre></td></tr></table></figure>
+<p>我们现在准备继续前进，确保我们的系统是最新的安全补丁</p>
+<h3 id="应用Raspbian的更新"><a href="#应用Raspbian的更新" class="headerlink" title="应用Raspbian的更新"></a>应用Raspbian的更新</h3><p>我们将首先运行apt的“update”命令。此命令将不会实际更新系统上的任何软件，但将下载最新的软件包列表的软件库，这样 Raspbian 就可以可以随着依赖了解所有的新软件。在“$”提示下发出以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt update</div></pre></td></tr></table></figure>
+<p>接下来，运行以下命令来升级安装在您的系统上需要升级的任何包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt full-upgrade</div></pre></td></tr></table></figure>
+<p>保持你的树莓派系统同步安全更新是很重要的。这两个命令应该一起发出并定期运行。</p>
+<h3 id="准备远程桌面"><a href="#准备远程桌面" class="headerlink" title="准备远程桌面"></a>准备远程桌面</h3><p>我们要远程运行我们的树莓派，无需专用的HDMI显示器和USB键盘/鼠标。这被称为无外设模式。我们将使用xrdp包来实现这一目标。新版本的Raspbian（从带有 PIXEL 桌面环境的版本开始）为远程连接功能装载有RealVNC。不幸的是，RealVNC不能很好地工作在无外设方式因为它降级到一个非常低的分辨率，而且改变分辨率有相当多的步骤。我们的xrdp方案自动缩放桌面分辨率，使我们的更容易使用。让我们这样做：</p>
+<ul>
+<li>我们可以安装xrdp之前，我们必须先安装tightvncserver包。tightvncserver的安装也将删除最新版本的Raspbian装载的RealVNC服务器软件，因为如果安装了RealVNC，tightvncserver（xrdp）不会工作。（感谢Ryan Hanley的提示！）在终端输入下面的命令：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt install -y tightvncserver</div></pre></td></tr></table></figure>
+<p>“-y”选项将自动用“是”回答默认的问题，这是我们在这种情况下想要的。</p>
+<ul>
+<li>下一步，调用下面的命令来安装xrdp：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt install -y xrdp</div></pre></td></tr></table></figure>
+<ul>
+<li>最后，我们需要安装 samba 包，我们将能够从网络上的 Windows 机器通过主机名 raspi 访问树莓派，而不是通过IP地址，因为树莓派会通过 DHCP 改变它的 IP 地址。（对于OS X用户，你可以安装Bonjour然后访问你的树莓派的主机名。例如，如果你的主机名是“raspi”，你可以在OS X上以“raspi.local”访问它。）好了，让我们安装Samba：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt install -y samba</div></pre></td></tr></table></figure>
+<ul>
+<li>安装完成后，你应该可以从Windows机器上ping这个树莓派的主机名（上面树莓派配置程序里配置的那个）：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:\&gt; ping raspi</div></pre></td></tr></table></figure>
+<ul>
+<li><p>现在你已准备好了启动远程桌面连接！</p>
+</li>
+<li><p>在你的Windows机器上，点击Windows键，输入“Remote Desktop Connection”（远程桌面连接）调出远程桌面程序。点击它来启动它。（OS X用户可以使用<a href="https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417" target="_blank" rel="external">Microsoft Remote Desktop</a>，这在Mac应用商店是免费的。）</p>
+</li>
+<li><p>在 Computer 文本框输入你的树莓派的主机名（在我的情况下是“raspi”）。</p>
+</li>
+</ul>
+<p><img src="http://p0.qhimg.com/t01bc0fef5800a1b5ec.png" alt="Windows Remote Desktop"></p>
+<ul>
+<li>然后，点击 Display 标签。移动 Display configuration 滑块到右边的“Full Screen”来保证我们的远程桌面连接将填补我的屏幕。它有可能已经被设置为“Full Screen”。</li>
+</ul>
+<p><img src="http://p0.qhimg.com/t019b0728706ea4ece8.png" alt="Remote desktop display tab"></p>
+<ul>
+<li><p>点击靠近对话框底部的 Connect 按钮。</p>
+</li>
+<li><p>然后你将被xrdp的登录屏幕提示：</p>
+</li>
+</ul>
+<p><img src="http://p0.qhimg.com/t01f9896dbb594b2e10.png" alt="xrdpLogin"></p>
+<ul>
+<li><p>输入您的凭据登录到树莓派。</p>
+</li>
+<li><p>用户名：pi</p>
+</li>
+<li><p>密码：raspberry（除非你在之前的教程里的树莓派配置程序里改变了它。）</p>
+</li>
+</ul>
+<p>太神了！我们远程连接到了 RasPi，我们不再需要专用的HDMI显示器和USB键盘/鼠标。让我们先关闭 RasPi 一分钟，这样我们可以释放我们的显示器和键盘/鼠标：</p>
+<ul>
+<li>启动一个终端会话并输入下面的命令来关闭您的系统：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo poweroff</div></pre></td></tr></table></figure>
+<ul>
+<li><p>等待的 RasPi 完全断电。</p>
+</li>
+<li><p>拔掉电源线，HDMI线，USB键盘和鼠标。</p>
+</li>
+<li><p>把插头电源线接回来，RasPi 应该会重新启动，但没有那些多余的连线！</p>
+</li>
+<li><p>给了 RasPi 一分钟左右开机之后，再次使用Windows远程桌面程序连接到它。</p>
+</li>
+</ul>
+<h3 id="在RasPi创建-Windows-文件共享（可选）"><a href="#在RasPi创建-Windows-文件共享（可选）" class="headerlink" title="在RasPi创建 Windows 文件共享（可选）"></a>在RasPi创建 Windows 文件共享（可选）</h3><p>我们可以在RasPi创建一个Windows文件共享，使我们能从Windows机器上直接复制文件到RasPi。这可以在许多情况下派上用场。对于OS X用户这也是有用的，因为你将能够从“Shared”的Finder连接到您的树莓派文件共享。这是我们如何做的：</p>
+<ul>
+<li><p>启动一个终端会话。</p>
+</li>
+<li><p>如下在主目录中创建一个名为“share”的目录：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir ~/share</div></pre></td></tr></table></figure>
+<ul>
+<li>发出以下命令来启动Leafpad编辑器。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo leafpad /etc/samba/smb.conf &amp;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>我们也可以使用基于控制台的“nano”编辑器，但Leafpad提供一个GUI，比较适合初学者。在启动Leafpad的命令结尾的“&amp;”符号让Leafpad成为后台进程，让我们回到终端shell提示符。同时，smb.conf 是我们之前安装的Samba软件包的一部分，这就是为什么它会存在在我们的系统里。</p>
+</li>
+<li><p>向下滚动到smb.conf配置文件的底部并添加下面的配置：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[PiShare]</div><div class="line"> comment=Raspi Share</div><div class="line"> path=/home/pi/share</div><div class="line"> browseable=Yes</div><div class="line"> writeable=Yes</div><div class="line"> only guest=No</div><div class="line"> create mask=0740</div><div class="line"> directory mask=0750</div><div class="line"> public=no</div></pre></td></tr></table></figure>
+<ul>
+<li><p>保存smb.conf配置文件的修改并退出Leafpad编辑器。（Raspbian将自动重启基于您的配置文件所做的更改的SMB（Samba）服务。）</p>
+</li>
+<li><p>回到终端会话，我们需要创建一个SMB（Samba）用户可以让我们安全地从Windows连接。我们将创建一个名为“pi”的用户，但这将是一个SMB（Windows用户）而不是Raspbian的“pi”的用户。这是我们如何做的：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo smbpasswd -a pi</div></pre></td></tr></table></figure>
+<p>你会被提示输入并重新输入密码。将此密码记录在某处以备将来查阅。</p>
+<p>我们已经准备好了从Windows连接到我们新创建的RasPi文件共享！</p>
+<ul>
+<li><p>回到你的Windows机器，键入Windows键和“R”（Win-R）启动输入命令的运行对话框。</p>
+</li>
+<li><p>输入两个反斜杠后跟你的 RasPi 机器名（例如：你的主机名）并且敲下回车。例如：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\\raspi</div></pre></td></tr></table></figure>
+<ul>
+<li><p>提示凭据时，输入以下内容：</p>
+</li>
+<li><p>用户名：以Windows语法输入的格式是域\用户名。对我们来说，我们的域是我们RasPi的主机名、用户名是“pi”。因此，我们将输入：raspi\pi</p>
+</li>
+</ul>
+<p>如果你的名字是不是raspi，你显然应该用你的替换它来输入。</p>
+<ul>
+<li><p>密码：（输入你上面用smbpasswd命令创建的密码）</p>
+</li>
+<li><p>瞧！我们现在应该连接上了。双击 PiShare 文件夹启动你刚才创建的文件分享。你也会看到一个叫做pi的文件夹，它给你的整个主目录提供只读权限。</p>
+</li>
+<li><p>你可以通过在Windows端创建一个文本文件，并验证它出现在 RasPi 端的目录 /home/pi/share 里，这样来测试你新创建的文件共享。</p>
+</li>
+<li><p>在Windows中，还可以将驱动器映射到刚刚创建的文件共享：</p>
+</li>
+<li><p>启动窗口资源管理器。</p>
+</li>
+<li><p>点击在顶部带状菜单的 Map network drive （映射网络驱动器）按钮并选择映射到网络驱动器。</p>
+</li>
+<li><p>输入驱动器盘符（比如“pi”驱动器的“P”盘符）、共享目录路径、并选择在登录时重新连接：</p>
+</li>
+</ul>
+<p><img src="http://p0.qhimg.com/t01f5c62c18c4265129.png" alt="map drive"></p>
+<ul>
+<li>输入上面你用smbpasswd命令创建的密码（如果被提示输入的话），选择 Remember my credentials（记住我的凭证）：</li>
+</ul>
+<p><img src="http://p0.qhimg.com/t0157e83003a43782ea.png" alt="map drive"></p>
+<ul>
+<li>在通过窗口浏览器查看时，你现在应该能看到一个“P”驱动器（或者其他你选择的驱动器盘符）！</li>
+</ul>
+<h3 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h3><p>您现在有一个惊艳的通用树莓派系统，可用于各种任务，并在Windows世界中运行良好（它甚至和其他Windows机器看起来就像是一个Windows机器！）——而且也可以很好地在Mac和Linux世界里工作。让我们继续安装Node.js，我们将准备在未来做一些有趣的项目。这里是步骤：</p>
+<p>我们在<a href="https://nodesource.com/" target="_blank" rel="external">NodeSource</a>的朋友主办并维护一些优秀的Node.js的二进制分发。我们将利用一个他们写的命令添加另一个包管理库到我们的RasPi，所以，我们可以从他们的仓库“apt install”一个现代版的Node.js。这是有益的因为Debian / Raspbian版本可能不会永远是最新的。通过添加 NodeSource 库，我们也将能够接收更新，而不是仅仅安装一个不容易升级的 Node 版本的独立的（.deb）文件。</p>
+<blockquote>
+<p>注：如本文开头介绍的，最后这部分对Node.js安装相关的教程，要求基于新的ARMv7或ARMv8芯片诸如树莓派2和树莓派3的系统。NodeSource 提供 Node.js 的二进制文件给ARMv7+的架构，但不支持基于旧的ARMv6架构的树莓派系统，诸如树莓派B/B+型号，或者树莓派0。</p>
+<p>仔细阅读你的树莓派电路板，确认写的是类似“Raspberry Pi 3 Model B”或者“Raspberry Pi 2 Model B”的东西。如果有疑问，在终端中运行以下命令：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ uname -m</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果返回的结果以“armv6”开头，你正在运行一个基于旧的ARMv6芯片的树莓派，并且后面的 Node.js 安装步骤不会成功；否则，你已经准备好了下一步。</p>
+</blockquote>
+<p>这里我们来到了最后的时段！让我们继续进行安装 Node 的最新版本，Node 7.2.1。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -</div></pre></td></tr></table></figure>
+<p>前面的命令修改我们的Debian的apt包管理库引用NodeSource包。</p>
+<blockquote>
+<p>注：从安全的角度来看知道你在系统上调用了什么命令通常是一个好想法，特别是因为上面的命令以root用户调用脚本。如果你希望知道这个脚本后面的技术细节，你可以在浏览器打开这个网址(<a href="https://deb.nodesource.com/setup_7.x" target="_blank" rel="external">https://deb.nodesource.com/setup_7.x</a>)，然后审查代码。这个脚本执行一些步骤以确定正在运行的Linux发行版，并指示Debian apt包管理系统添加NodeSource包仓库作为一个值得信赖的来源以获取Debian软件包。这让我们现在可以安装 Node.js 并且<a href="http://thisdavej.com/upgrading-to-more-recent-versions-of-node-js-on-the-raspberry-pi/" target="_blank" rel="external">可以升级到最新版本的可用Node.js</a>。</p>
+</blockquote>
+<p>现在，我们已经添加了 NodeSource 包仓库，我们可以继续安装Node.js了！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt install nodejs</div></pre></td></tr></table></figure>
+<p>然后我们可以测试和查看我们正在运行的 Node 版本，并且启动 Node 控制台，就像我们在<a href="http://thisdavej.com/learning-through-making-getting-started-with-node-js/" target="_blank" rel="external">前一篇文章</a>里讨论的那样，作为一个快速测试，以确认安装成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ node -v</div><div class="line">v7.2.1</div><div class="line">$ node</div><div class="line">&gt; 1 + 3</div><div class="line">4</div><div class="line">&gt; # 我们可以敲两次 Ctrl-C 来退出控制台，返回 shell 提示符。</div></pre></td></tr></table></figure>
+<h3 id="下一次"><a href="#下一次" class="headerlink" title="下一次"></a>下一次</h3><p>在以后的文章中，我们将利用npm（Node Package Manager，Node包管理器）社区的长处，建立一个简单的，但高可用的Web服务器，无需任何代码。这可以通过使用你刚刚在这里创建的树莓派系统，或在Windows/Linux/Mac机器上完成，正如我在一篇<a href="http://thisdavej.com/learning-through-making-getting-started-with-node-js/" target="_blank" rel="external">之前的文章</a>中所概述的。希望再见到你！</p>
+<h1 id="在树莓派上安装-Node-js-的指引-thisDaveJ"><a href="#在树莓派上安装-Node-js-的指引-thisDaveJ" class="headerlink" title="在树莓派上安装 Node.js 的指引 | thisDaveJ"></a>在树莓派上安装 Node.js 的指引 | thisDaveJ</h1><blockquote>
+<p>本文转载自：<a href="http://www.zcfy.cc" target="_blank" rel="external">众成翻译</a><br>译者：<a href="http://www.zcfy.cc/@qhxin" target="_blank" rel="external">qhxin</a><br>链接：<a href="http://www.zcfy.cc/article/2090" target="_blank" rel="external">http://www.zcfy.cc/article/2090</a><br>原文：<a href="http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/?utm_source=javascriptweekly&amp;utm_medium=email" target="_blank" rel="external">http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/?utm_source=javascriptweekly&amp;utm_medium=email</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
+	</div>
+
+      
+
+      
+
+      
+        <div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode"></div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/17/fanyi/virtual-css-with-styletron/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Virtual CSS 和 Styletron</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi" data-title="在树莓派上安装 Node.js 的指引 | thisDaveJ" data-url="http://qhxin.com/2016/12/19/fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"qhxin"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 青花
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/素食/" style="font-size: 10px;">素食</a> <a href="/tags/经验/" style="font-size: 15px;">经验</a> <a href="/tags/翻译/" style="font-size: 20px;">翻译</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com">Github</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://haiwx.github.io">E-Loli</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br/&gt;在这样年轻的时候&lt;br/&gt;经常忘记一些人和事&lt;br/&gt;现在写一些东西&lt;br/&gt;也算是一份记忆</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
