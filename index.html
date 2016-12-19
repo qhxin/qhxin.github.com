@@ -21,21 +21,22 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/main.css?v=4.0.0.css">
+  
+
   
 
 </head>
 
 <body>
-  <div id="container">
-    <div class="left-col">
+  <div id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow">
       <div class="overlay"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			
 			<img src="/images/avatar.jpg" class="js-avatar">
-			
 		</a>
 
 		<hgroup>
@@ -57,22 +58,17 @@
 	        
     		
     			
-    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			<a data-idx="0" q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
     			
             
     			
-    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			<a data-idx="1" q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
     			
             
     			
-    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			<a data-idx="2" q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
     			
             
@@ -88,7 +84,7 @@
 </div>
 
     </div>
-    <div class="mid-col">
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       <nav id="mobile-nav">
   	<div class="overlay">
   		<div class="slider-trigger"><i class="icon-sort"></i></div>
@@ -97,9 +93,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				
-					<img src="/images/avatar.jpg" class="js-avatar">
-				
+				<img src="/images/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author">青花</h1>
@@ -111,6 +105,9 @@
 				<ul>
 				
 					<li><a href="/">主页</a></li>
+		        
+		        
+		        	<li><a href="/archives/">所有文章</a></li>
 		        
 				</ul>
 			</nav>
@@ -125,10 +122,15 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-        
+      <div id="wrapper" class="body-wrap">
+        <div class="menu-l">
+          <div class="canvas-wrap">
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+          </div>
+          <div id="js-content" class="content-ll">
+            
   
-    <article id="post-fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -151,7 +153,9 @@
 </blockquote>
 <p>在我们这批LTM（Learning through Making）Node.js系列教程，我们将在树莓派3或者2上准备和运行 Node。在树莓派3上，你不需要购买独立的USB Wi-Fi适配器。我专注于树莓派3和2，而不是老版本的诸如树莓派B+，因为在写这篇文章时它们是最新的型号。在树莓派3，举个例子来说，它有一个 1.2GHz 的四核 ARMv8 芯片和 1GB 的内存，相比起来，树莓派1的B+型号只有 700MHz 的单核 ARMv6 芯片以及 512MB 的内存。</p>
 <p>这里提供的介绍是为在树莓派3（ARMv8）或者树莓派2（ARMv7）上安装 Node.js 准备的而不是其它的基于 ARMv6 芯片的型号，诸如树莓派1的B型号、B+型号或者树莓派0。这个安装指南的大部分应该仍然被证明对除了派2和派3以外的其它树莓派系统是有用的；然而，最后的步骤重点在于它不会在基于老 ARMv6 架构的系统上工作。<br>
-        <a class="article-more-a"  href="/2016/12/19/fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi/#more">more >></a>
+        
+          <a class="article-more-a" href="/2016/12/19/fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi/#more">more >></a>
+        
       
 
       
@@ -168,7 +172,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/19/fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/19/fanyi/beginners-guide-to-installing-node-js-on-a-raspberry-pi/">展开全文 >></a>
         </p>
       
 
@@ -186,7 +190,7 @@
 
 
   
-    <article id="post-fanyi/virtual-css-with-styletron" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-fanyi/virtual-css-with-styletron" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -207,7 +211,9 @@
         <p>Styletron 是一个为了高性能而建立的 CSS-in-JS 的库，旨在运行得尽可能的快，同时尽可能小的输出 CSS。</p>
 <p>大部分 CSS-in-JS 库将 JS 对象包含样式声明为相应的 CSS 类并使用生成的散列作为类名<a href="#fn-1">1</a>。总的来说，这一过程运行良好，解决了大多数的CSS问题<a href="#fn-2">2</a>。</p>
 <p><a href="https://github.com/rtsao/styletron">Styletron</a> 采取了不同的方法。它使用一个“虚拟CSS”引擎，抽象了底层的 CSS ，并启用一些强大的性能优化。</p>
-        <a class="article-more-a"  href="/2016/12/17/fanyi/virtual-css-with-styletron/#more">more >></a>
+        
+          <a class="article-more-a" href="/2016/12/17/fanyi/virtual-css-with-styletron/#more">more >></a>
+        
       
 
       
@@ -224,7 +230,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/17/fanyi/virtual-css-with-styletron/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/17/fanyi/virtual-css-with-styletron/">展开全文 >></a>
         </p>
       
 
@@ -242,7 +248,7 @@
 
 
   
-    <article id="post-qianduan/saolei-in-react" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-qianduan/saolei-in-react" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -265,7 +271,9 @@
 <p>整个界面分成了四个组件：</p>
 <p><img src="http://ww1.sinaimg.cn/mw690/a13e4f59gw1fat0fdfcq1j20nf0hc77j.jpg" alt=""></p>
 <p>设计思路：</p>
-        <a class="article-more-a"  href="/2016/12/16/qianduan/saolei-in-react/#more">more >></a>
+        
+          <a class="article-more-a" href="/2016/12/16/qianduan/saolei-in-react/#more">more >></a>
+        
       
 
       
@@ -282,7 +290,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/16/qianduan/saolei-in-react/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/16/qianduan/saolei-in-react/">展开全文 >></a>
         </p>
       
 
@@ -300,7 +308,7 @@
 
 
   
-    <article id="post-qianduan/try-react" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-qianduan/try-react" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -320,7 +328,9 @@
       
         <h2 id="一些废话"><a href="#一些废话" class="headerlink" title="一些废话"></a>一些废话</h2><p>作为一个技术偏向后端、然后半路开始做一些前端的事情，另外性格比较保守的人，之前一直是用jQuery在做前端，基本上也够用，但是也有在工作中思考一些前端的东西。因为公司的技术栈已经切换为React，随着旧版本的下线，以后应该会经常和它打交道了。</p>
 <p>因为产品的原因，jQuery开发的旧系统确实很难维护，常常改一个地方要考虑非常多的影响。原因呢，旧系统的代码的组织上比较混乱是一方面，另外就是业务逻辑很繁杂，耦合度非常高，很难扩展或复用，还有一些地方已经完全没有人记得当初为什么要这样做，以及这个逻辑究竟在干啥。所以利用老大们去重构的这段过渡时间，我也做了一些准备。</p>
-        <a class="article-more-a"  href="/2016/12/14/qianduan/try-react/#more">more >></a>
+        
+          <a class="article-more-a" href="/2016/12/14/qianduan/try-react/#more">more >></a>
+        
       
 
       
@@ -337,7 +347,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/14/qianduan/try-react/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/14/qianduan/try-react/">展开全文 >></a>
         </p>
       
 
@@ -355,7 +365,7 @@
 
 
   
-    <article id="post-sushi/fei-cui-bai-yu-tang" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sushi/fei-cui-bai-yu-tang" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -376,7 +386,9 @@
         <p><img src="http://ww4.sinaimg.cn/mw690/a13e4f59gw1faob9zl83mj20fa0a775l.jpg" alt="珍珠翡翠白玉汤"></p>
 <p><strong>原料：</strong>豆腐200克、毛豆50克、娃娃菜100克、植物油1汤匙、盐1茶匙、香油1茶匙</p>
 <p><strong>做法：</strong></p>
-        <a class="article-more-a"  href="/2016/12/12/sushi/fei-cui-bai-yu-tang/#more">more >></a>
+        
+          <a class="article-more-a" href="/2016/12/12/sushi/fei-cui-bai-yu-tang/#more">more >></a>
+        
       
 
       
@@ -393,7 +405,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/12/sushi/fei-cui-bai-yu-tang/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/12/sushi/fei-cui-bai-yu-tang/">展开全文 >></a>
         </p>
       
 
@@ -411,7 +423,7 @@
 
 
   
-    <article id="post-fanyi/javascripts-strict-mode-and-why-you-should-use-it" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-fanyi/javascripts-strict-mode-and-why-you-should-use-it" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -433,7 +445,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;use strict&quot;;</div></pre></td></tr></table></figure>
 <p><code>“use strict”;</code>指令可以用两种方式使用。唤起严格模式的第一种方法是在文件级别上。通过在文件开始的位置添加这个指令（该指令只能在注释和空格之前），在全局上下文内启用严格模式。这意味着你所有的代码都将在严格模式下进行解析。当严格模式和非严格模式的脚本在一起使用时，一定要注意一下。当严格模式的脚本在前面的话会强制非严格模式的脚本在严格模式下解析。当非严格模式的脚本在前面时则会导致相反的行为。这会导致一些和 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=579119">Amazon</a> 一样的问题。</p>
 <p>第二种方法是在函数级别上使用严格模式。将<code>“use strict”;</code>指令放置在函数体开头，可以启用这个级别的严格模式。与全局严格模式一样，这个指令只能在空格和注释之前。在函数级使用严格模式允许程序员在同一文件中混合和匹配严格模式的和非严格模式的函数。当一些遗留代码依赖于已经过时的被严格模式弃用的特点时这是很有用的。</p>
-        <a class="article-more-a"  href="/2016/12/12/fanyi/javascripts-strict-mode-and-why-you-should-use-it/#more">more >></a>
+        
+          <a class="article-more-a" href="/2016/12/12/fanyi/javascripts-strict-mode-and-why-you-should-use-it/#more">more >></a>
+        
       
 
       
@@ -450,7 +464,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/12/fanyi/javascripts-strict-mode-and-why-you-should-use-it/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/12/fanyi/javascripts-strict-mode-and-why-you-should-use-it/">展开全文 >></a>
         </p>
       
 
@@ -468,7 +482,7 @@
 
 
   
-    <article id="post-fanyi/you-cant-detect-a-touchscreen" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-fanyi/you-cant-detect-a-touchscreen" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -491,7 +505,9 @@
 <p>无论你可能会怎么想，目前，在浏览器里可靠地检测当前的设备是否有一个触摸屏是不可能的。</p>
 <p>并且可能会在很久很久以后你才能做这个检测。</p>
 <p>让我解释一下这样说的原因……</p>
-        <a class="article-more-a"  href="/2016/12/11/fanyi/you-cant-detect-a-touchscreen/#more">more >></a>
+        
+          <a class="article-more-a" href="/2016/12/11/fanyi/you-cant-detect-a-touchscreen/#more">more >></a>
+        
       
 
       
@@ -508,7 +524,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/11/fanyi/you-cant-detect-a-touchscreen/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/11/fanyi/you-cant-detect-a-touchscreen/">展开全文 >></a>
         </p>
       
 
@@ -526,7 +542,7 @@
 
 
   
-    <article id="post-fanyi/publishing-with-github-pages-now-as-easy-as-1-2-3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-fanyi/publishing-with-github-pages-now-as-easy-as-1-2-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -553,7 +569,9 @@
 <li><p>在你的仓库设置那里激活 GitHub Pages 。</p>
 </li>
 </ol>
-        <a class="article-more-a"  href="/2016/12/11/fanyi/publishing-with-github-pages-now-as-easy-as-1-2-3/#more">more >></a>
+        
+          <a class="article-more-a" href="/2016/12/11/fanyi/publishing-with-github-pages-now-as-easy-as-1-2-3/#more">more >></a>
+        
       
 
       
@@ -570,7 +588,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/11/fanyi/publishing-with-github-pages-now-as-easy-as-1-2-3/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/11/fanyi/publishing-with-github-pages-now-as-easy-as-1-2-3/">展开全文 >></a>
         </p>
       
 
@@ -588,7 +606,7 @@
 
 
   
-    <article id="post-jingyan/kaipingfang" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-jingyan/kaipingfang" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -629,7 +647,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/08/jingyan/kaipingfang/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/08/jingyan/kaipingfang/">展开全文 >></a>
         </p>
       
 
@@ -647,7 +665,7 @@
 
 
   
-    <article id="post-jingyan/yaoshifangzhi" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-jingyan/yaoshifangzhi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -668,7 +686,9 @@
         <p>很久以前，一位师兄教导我，成熟的男人是不应该把钥匙别在裤腰上的。当时不明白，后来去查了，是社交礼仪的规定。我一向不在意这些什么礼仪，对此不以为然，不过后来为了方便，还是将钥匙放在了包里。</p>
 <p>今天为了方便，没有带包，将钥匙挂在裤腰上，出去浪了一天。回来后发现，钥匙尽然弯了，弯了~弯了~弯了！我靠，折腾了很久才勉强掰正，差点就进不了屋。</p>
 <p>所以为了避免今后出现坐在车里把钥匙坐弯，以及被钥匙串伤害，以后应该不怕麻烦，坚决带包。</p>
-        <a class="article-more-a"  href="/2016/12/04/jingyan/yaoshifangzhi/#more">more >></a>
+        
+          <a class="article-more-a" href="/2016/12/04/jingyan/yaoshifangzhi/#more">more >></a>
+        
       
 
       
@@ -685,7 +705,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/04/jingyan/yaoshifangzhi/#more">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/04/jingyan/yaoshifangzhi/">展开全文 >></a>
         </p>
       
 
@@ -710,6 +730,8 @@
   
 
 
+          </div>
+        </div>
       </div>
       <footer id="footer">
   <div class="outer">
@@ -727,67 +749,120 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		animate: true,
 		isHome: true,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: true,
+		open_in_new: false,
 		root: "/",
 		innerArchive: true
 	}
 </script>
 
-<script src="/./main.js"></script>
+<script src="/./main.js?v=4.0.0.js"></script>
 
 
     
-<div class="tools-col">
-  <ul class="btn-wrap">
-    
-      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
-    
-    
-      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
-    
-    
-      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
-    
-    
-      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
-    
-  </ul>
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-wrap">
     
-    	<section class="tools-section tools-section-all chose">
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">翻译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">经验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">素食</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">随笔</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            2、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: true
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
     	</section>
     
 
     
-    	<section class="tools-section tools-section-tag">
-    			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/素食/" style="font-size: 10px;">素食</a> <a href="/tags/经验/" style="font-size: 15px;">经验</a> <a href="/tags/翻译/" style="font-size: 20px;">翻译</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
-    			</div>
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-friends">
+    	<section class="tools-section tools-section-friends" q-show="friends">
   		
-  			<div class="friends-wrap" id="js-friends">
-  			
-  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com">Github</a>
-  	        
-  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://haiwx.github.io">E-Loli</a>
-  	        
-  	        </div>
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://github.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Github</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://haiwx.github.io" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>E-Loli</a>
+            </li>
+          
+        </ul>
   		
     	</section>
     
 
     
-    	<section class="tools-section tools-section-me">
+    	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
   	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br/&gt;在这样年轻的时候&lt;br/&gt;经常忘记一些人和事&lt;br/&gt;现在写一些东西&lt;br/&gt;也算是一份记忆</div>
   	  	
