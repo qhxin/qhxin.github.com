@@ -6,21 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://qhxin.com">
-  <title>开始尝试React的感受以及遇到的问题 | 青花</title>
+  <title>香酥茄盒 | 青花</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一些废话作为一个技术偏向后端、然后半路开始做一些前端的事情，另外性格比较保守的人，之前一直是用jQuery在做前端，基本上也够用，但是也有在工作中思考一些前端的东西。因为公司的技术栈已经切换为React，随着旧版本的下线，以后应该会经常和它打交道了。
-因为产品的原因，jQuery开发的旧系统确实很难维护，常常改一个地方要考虑非常多的影响。原因呢，旧系统的代码的组织上比较混乱是一方面，另外就是业务逻">
+  <meta name="description" content="炸藕盒和茄盒，好吃的关键在挂糊，实践对比了两种挂糊，有了结论。诗云：“纸上得来终觉浅，绝知此事要躬行。”
+香酥的挂糊包裹着软嫩的茄子，茄子里夹着鲜美的馅料，一口下去，唇齿留香，可以品尝到很多种味道和口感。配粥食用很不错，盛上一碗软糯的白粥，搭配香酥的茄盒，既不会觉得白粥太寡淡，也不会觉得茄盒太油腻。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开始尝试React的感受以及遇到的问题">
-<meta property="og:url" content="http://qhxin.com/2016/12/14/qianduan/try-react/index.html">
+<meta property="og:title" content="香酥茄盒">
+<meta property="og:url" content="http://qhxin.com/2017/01/19/sushi/xiang-su-qie-he/index.html">
 <meta property="og:site_name" content="青花">
-<meta property="og:description" content="一些废话作为一个技术偏向后端、然后半路开始做一些前端的事情，另外性格比较保守的人，之前一直是用jQuery在做前端，基本上也够用，但是也有在工作中思考一些前端的东西。因为公司的技术栈已经切换为React，随着旧版本的下线，以后应该会经常和它打交道了。
-因为产品的原因，jQuery开发的旧系统确实很难维护，常常改一个地方要考虑非常多的影响。原因呢，旧系统的代码的组织上比较混乱是一方面，另外就是业务逻">
-<meta property="og:updated_time" content="2016-12-14T15:42:30.000Z">
+<meta property="og:description" content="炸藕盒和茄盒，好吃的关键在挂糊，实践对比了两种挂糊，有了结论。诗云：“纸上得来终觉浅，绝知此事要躬行。”
+香酥的挂糊包裹着软嫩的茄子，茄子里夹着鲜美的馅料，一口下去，唇齿留香，可以品尝到很多种味道和口感。配粥食用很不错，盛上一碗软糯的白粥，搭配香酥的茄盒，既不会觉得白粥太寡淡，也不会觉得茄盒太油腻。">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/a13e4f59gy1fbvssk8rzej20ak0akq4l.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/a13e4f59gy1fbvsvk595uj20go05kdgc.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/a13e4f59gy1fbvsvkjgikj20go05kmy5.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/a13e4f59gy1fbvsvkvzayj20go05kt9d.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/a13e4f59gy1fbvsvlizqnj20go05kwfh.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/a13e4f59gy1fbvsvm3ggdj20ak0aktad.jpg">
+<meta property="og:updated_time" content="2017-01-19T04:07:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开始尝试React的感受以及遇到的问题">
-<meta name="twitter:description" content="一些废话作为一个技术偏向后端、然后半路开始做一些前端的事情，另外性格比较保守的人，之前一直是用jQuery在做前端，基本上也够用，但是也有在工作中思考一些前端的东西。因为公司的技术栈已经切换为React，随着旧版本的下线，以后应该会经常和它打交道了。
-因为产品的原因，jQuery开发的旧系统确实很难维护，常常改一个地方要考虑非常多的影响。原因呢，旧系统的代码的组织上比较混乱是一方面，另外就是业务逻">
+<meta name="twitter:title" content="香酥茄盒">
+<meta name="twitter:description" content="炸藕盒和茄盒，好吃的关键在挂糊，实践对比了两种挂糊，有了结论。诗云：“纸上得来终觉浅，绝知此事要躬行。”
+香酥的挂糊包裹着软嫩的茄子，茄子里夹着鲜美的馅料，一口下去，唇齿留香，可以品尝到很多种味道和口感。配粥食用很不错，盛上一碗软糯的白粥，搭配香酥的茄盒，既不会觉得白粥太寡淡，也不会觉得茄盒太油腻。">
+<meta name="twitter:image" content="http://wx2.sinaimg.cn/mw690/a13e4f59gy1fbvssk8rzej20ak0akq4l.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -130,41 +137,51 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-qianduan/try-react" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sushi/xiang-su-qie-he" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      开始尝试React的感受以及遇到的问题
+      香酥茄盒
     </h1>
   
 
-        <a href="/2016/12/14/qianduan/try-react/" class="archive-article-date">
-  	<time datetime="2016-12-14T14:40:08.400Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-14</time>
+        <a href="/2017/01/19/sushi/xiang-su-qie-he/" class="archive-article-date">
+  	<time datetime="2017-01-19T03:49:33.100Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-19</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一些废话"><a href="#一些废话" class="headerlink" title="一些废话"></a>一些废话</h2><p>作为一个技术偏向后端、然后半路开始做一些前端的事情，另外性格比较保守的人，之前一直是用jQuery在做前端，基本上也够用，但是也有在工作中思考一些前端的东西。因为公司的技术栈已经切换为React，随着旧版本的下线，以后应该会经常和它打交道了。</p>
-<p>因为产品的原因，jQuery开发的旧系统确实很难维护，常常改一个地方要考虑非常多的影响。原因呢，旧系统的代码的组织上比较混乱是一方面，另外就是业务逻辑很繁杂，耦合度非常高，很难扩展或复用，还有一些地方已经完全没有人记得当初为什么要这样做，以及这个逻辑究竟在干啥。所以利用老大们去重构的这段过渡时间，我也做了一些准备。</p>
+        <p><img src="http://wx2.sinaimg.cn/mw690/a13e4f59gy1fbvssk8rzej20ak0akq4l.jpg" alt="香酥茄盒"></p>
+<p>炸藕盒和茄盒，好吃的关键在挂糊，实践对比了两种挂糊，有了结论。诗云：“纸上得来终觉浅，绝知此事要躬行。”</p>
+<p>香酥的挂糊包裹着软嫩的茄子，茄子里夹着鲜美的馅料，一口下去，唇齿留香，可以品尝到很多种味道和口感。配粥食用很不错，盛上一碗软糯的白粥，搭配香酥的茄盒，既不会觉得白粥太寡淡，也不会觉得茄盒太油腻。</p>
 <a id="more"></a>
-<p>在我本意，我是不太支持使用太多工具来搞前端的，毕竟简单好用才是最棒的。但问题是目前前端的技术栈并不是太简单，最近几年有很多新事物新玩意被制造出来，又被淘汰，你根本拿不准什么时候社区就丢弃某些你所依赖的东西了，在这样一个不稳定阶段选择一个靠谱的工具是很令我这种对前端社区不太熟的人很感到焦虑的。</p>
-<p>虽然我对社区的动向不是很熟悉，但毕竟还是写了这么久的代码，经过这些年对前端的观察和实践，其实我觉得我只需要这么一些东西即可：</p>
-<ol>
-<li>代码压缩打包工具，这个可以节省带宽和连接数，很实用；</li>
-<li>模块化、组件化、数据和视图分离的规范；</li>
-<li>处理兼容性的javascript的库，jQuery啦；</li>
-</ol>
-<p>其实就这几点，很简单，目前代码压缩和打包是有了的，jQuery也是必须的，那剩下的就是组件化了。实际上，我也在用组件化的思想编程，不过没有像React那样使用虚拟dom来diff更新，也没有用过模板，简单的用数组来拼接用做视图。不过在尝试了React做视图之后，确实觉得还是很方便，毕竟封装了一些需要我手写的东西，特别是jsx的写法，确实很方便。</p>
-<p>目前还没有使用数据流什么的，因为这里是比较有争议的，有人说单向好，有人说双向好，其实我更倾向于双向数据流，业务决定技术选型嘛，再有就是做视图就专心做视图，没必要搞那么臃肿，所以我对React、以及ES的其他一些高级特性以及语法糖目前不是很感兴趣。</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>说说遇到的几个问题：</p>
-<h3 id="1-嵌套组件互相调用方法导致无限回调"><a href="#1-嵌套组件互相调用方法导致无限回调" class="headerlink" title="1. 嵌套组件互相调用方法导致无限回调"></a>1. 嵌套组件互相调用方法导致无限回调</h3><p>这个问题是由于我为了在父子组件之间进行沟通，子组件在 render 时调用了一些 props 里设置的父组件的回调方法，然后在这个回调函数里更新 state，结果就是在render的时候，触发了子组件的 componentWillReceiveProps 方法，因为我在这里做了一些针对 props 改变时更新子组件的 state 的事情，于是构成了一个无限的回调，直至JS报错，汗~~</p>
-<h3 id="2-refs-的成员在未插入DOM时是不存在的"><a href="#2-refs-的成员在未插入DOM时是不存在的" class="headerlink" title="2. refs 的成员在未插入DOM时是不存在的"></a>2. refs 的成员在未插入DOM时是不存在的</h3><p>在子组件A上设置了一个ref，供父组件的方法找到它，另外有一个子组件B，会通知父组件一些事情，然后父组件让组件A来显示。我一开始只在子组件B的getInitialState计算完state初始值的时候就通知父组件，结果就是它的refs里面找不到组件A，原因是需要组件真实被插入DOM之后，才会添加ref到refs里面去，所以应该在componentDidMount的时候再去触发这个通知。以后也应该注意这个问题。</p>
-<h3 id="3-this-setState"><a href="#3-this-setState" class="headerlink" title="3. this.setState()"></a>3. this.setState()</h3><p>只有用this.setState设置state才会更新 render ，直接赋值是不行的。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上面这些问题是因为不熟练造成的，并不是致命问题。总的来说React还是比较简单的，用着也比较顺手，效率较高，适合我们的业务。</p>
+<p>【酥炸茄盒】<br>馅料：紫长茄2根  冻豆腐1块  干豆腐皮2张  雪菜30g  香菜1棵  盐  糖  花椒粉  生抽<br>挂糊：面粉100g  淀粉100g  温水200g  酵母1/4小勺  泡打粉1/4小勺  盐1小勺  花椒粉1/2小勺 </p>
+<p><strong>做法：</strong></p>
+<p>1.面粉、淀粉、酵母、泡打粉、温水一起混合均匀，放置温暖处30分钟，待面糊醒发至表面起泡就差不多了</p>
+<p>2.冻豆腐解冻后，对切，放入热水中，加入少许盐，绰烫3分钟捞出</p>
+<p><img src="http://wx2.sinaimg.cn/mw690/a13e4f59gy1fbvsvk595uj20go05kdgc.jpg" alt=""></p>
+<p>3.冻豆腐过冷水，待放凉后，挤去多余水分后，切碎</p>
+<p>4.干豆腐皮冲洗下用绰烫豆腐的水泡发，捞出过水挤干，切碎</p>
+<p>5.雪菜洗净，香菜洗净切碎</p>
+<p><img src="http://wx3.sinaimg.cn/mw690/a13e4f59gy1fbvsvkjgikj20go05kmy5.jpg" alt=""></p>
+<p>6.把雪菜、香菜、冻豆腐、豆腐皮放入碗中，调入适量盐、糖、花椒粉、生抽拌匀待用</p>
+<p>7.紫茄子洗净去掉两端，先切一刀别切断，再切一刀断开，就是一个茄夹了，照此切法全部把茄夹切好</p>
+<p>8.取一个茄夹，塞入馅料，不要太用力，防止茄片断开</p>
+<p><img src="http://wx1.sinaimg.cn/mw690/a13e4f59gy1fbvsvkvzayj20go05kt9d.jpg" alt=""></p>
+<p>9.醒发好的面糊，调入适量花椒粉和盐，拌匀</p>
+<p>10.炒锅中，放入适量植物油烧热，用筷子夹住一个茄夹，放入面糊中，裹满挂糊下入油锅中</p>
+<p><img src="http://wx4.sinaimg.cn/mw690/a13e4f59gy1fbvsvlizqnj20go05kwfh.jpg" alt=""></p>
+<p>11.中小火炸制两面金黄，控油后即可食用</p>
+<p><strong>温馨小提示：</strong></p>
+<p>1.面粉、淀粉、水的比例约为1：1：3，面糊厚薄要适中，</p>
+<p>2.火不要太大，防止炸焦，这个馅料比较易熟，中小火炸制两面金黄就差不多了。</p>
+<p>3.可以选择自己喜欢的酱料食用，比如孩子可以沾番茄酱。</p>
+<p>4.虽然茄盒很香，但是属于油炸食品，一次不要吃太多哦</p>
+<p><img src="http://wx2.sinaimg.cn/mw690/a13e4f59gy1fbvsvm3ggdj20ak0aktad.jpg" alt=""></p>
 
       
 
@@ -175,7 +192,7 @@
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/素食/">素食</a></li></ul>
 	</div>
 
       
@@ -239,18 +256,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/12/16/qianduan/saolei-in-react/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          用React写了一个扫雷游戏
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/12/12/sushi/fei-cui-bai-yu-tang/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">珍珠翡翠白玉汤</div>
+    <a href="/2016/12/20/sushi/qie-zhi-shao-tu-dou/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">茄汁烧土豆</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -263,7 +271,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="qianduan/try-react" data-title="开始尝试React的感受以及遇到的问题" data-url="http://qhxin.com/2016/12/14/qianduan/try-react/"></div>
+	<div class="ds-thread" data-thread-key="sushi/xiang-su-qie-he" data-title="香酥茄盒" data-url="http://qhxin.com/2017/01/19/sushi/xiang-su-qie-he/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
